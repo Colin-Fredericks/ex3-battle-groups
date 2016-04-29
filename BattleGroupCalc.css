@@ -1,0 +1,97 @@
+body {
+    font-family: Verdana, sans-serif;
+}
+
+h1 {
+    color: #b80;
+    font-variant: small-caps;
+    margin: 0px 0px 8px 0px;
+}
+
+h2, h3 {
+    font-variant: small-caps;
+    margin: 4px 0px 4px 0px;
+    display: inline-block;
+}
+
+p {
+    margin: 4px;
+}
+
+table {
+    border: 2px solid #b80;;
+    padding: 0px 4px 8px 4px;
+    background-color: rgb(250, 240, 190);
+}
+
+th {
+    text-align: right;
+    padding-left: 4px;
+}
+
+td {
+    padding-right: 4px;
+}
+
+#tabletitle {
+    text-align: center;
+}
+
+.slider {
+    width: 300px;
+    display: block;
+    margin-top: 4px;
+}
+
+.labels, .allsliders{
+    display: inline-block;
+}
+
+.allsliders p {
+    padding-top: 0px;
+    margin-top: 2px;
+    padding-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#armystats {
+    display: inline-block;
+}
+
+.bigbox {
+    border: 2px solid #b80;
+    background-color: #da3;
+    float:left;
+    white-space: nowrap;
+    padding: 3px;
+}
+
+.leftbox {
+    display: inline-block;
+    margin: 0px 16px 0px 0px;
+    padding: 0px 0px 0px 8px;
+    vertical-align: top;
+}
+
+.titletopper {
+    margin: 0px;
+    padding: 0px;
+    color: #b80;
+    font-variant: small-caps;    
+    font-weight: bold;
+}
+
+.trooptype {
+    float: left;
+}
+
+.ui-selectmenu-button {
+    float:left;
+    margin: 4px 0px 0px 4px;
+}
+
+.ui-selectmenu-text {
+    padding: 4px 20px 4px 8px;
+    font-size: 14px;
+}
