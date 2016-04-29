@@ -6,20 +6,22 @@
     <script src="jquery-2.2.3.min.js"></script>
     <link rel="stylesheet" href="jquery-ui.min.css">
     <script src="jquery-ui.min.js"></script>
+    <script src="BattleGroupArmies.js"></script>
     <script src="BattleGroupCalc.js"></script>
 	<link rel="stylesheet" type="text/css" href="BattleGroupCalc.css" />
 </head>
 <body>
 
-<p class="titletopper">Exalted 3rd Edition</p>
-<h1>Battle Group Generator</h1>
+<p class="titletopper dontprint">Exalted 3rd Edition</p>
+<h1 class="dontprint">Battle Group Generator</h1>
 
 <div class="bigbox">
 
-    <div class="leftbox">
+    <div class="leftbox dontprint">
     
         <h2 class="trooptype">Troop Type:</h2>
         <select id="armytype">
+            <option value="custom">Custom</option>
             <option value="conscript">Conscripts</option>
             <option value="soldier" selected>Battle-Ready Troops</option>
             <option value="nomad">Nomadic Horse-Archers</option>
@@ -63,6 +65,55 @@
         <tr><th>Command Bonus:</th><td id="command"></td></tr>
         <tr><th>Rout Difficulty:</th><td id="routdiff"></td></tr>
     </table>
+
+<button id="get-printable" class="no-print">Get Printable Version</button>
+
+</div>
+
+<br clear="all">
+
+<div class="hidden custombox">
+    
+    <!-- Add a copy of the table above to organize this ugly mess. -->
+    
+    <form>
+    
+    <table id="customstats">
+        <tr>
+            <th><h3><label for="army_box">Army Name</label></h3></th>
+            <td><input id="army_box" type="text" name="name" class="customtext"> <br></td>
+        </tr>
+        <tr>
+            <th><label for="jb_box">Join Battle</label></th>
+            <td><input id="jb_box" type="text" name="joinbattle" class="customtext numeric"></td>
+        </tr>
+        <tr>
+            <th><label for="atk_box">Attack</label></th>
+            <td><input id="atk_box" type="text" name="attack" class="customtext numeric"></td>
+        </tr>
+        <tr>
+            <th><label for="def_box">Defense</label></th>
+            <td><input id="def_box" type="text" name="defense" class="customtext numeric"></td>
+        </tr>
+        <tr>
+            <th><label for="dmg_box">Damage</label></th>
+            <td><input id="dmg_box" type="text" name="damage" class="customtext numeric"></td>
+        </tr>
+        <tr>
+            <th><label for="ht_box">Health</label></th>
+            <td><input id="ht_box" type="text" name="magnitude" class="customtext numeric"></td>
+        </tr>
+        <tr>
+            <th><label for="sk_box">Soak</label></th>
+            <td><input id="sk_box" type="text" name="soak" class="customtext numeric"></td>
+        </tr>
+        <tr>
+            <th><label for="pm_box">Perfect Morale?</label></th>
+            <td><input id="pm_box" type="checkbox" name="perfectmorale" value="perfect" class="customcheck"></td>
+        </tr>
+    </table>
+
+    </form>
 
 </div>
 

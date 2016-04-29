@@ -1,6 +1,9 @@
 $(document).ready(function(){
     
     var armyType = 'soldier';
+    var hasFormHandlers = false;
+    var isPrintable = false;
+    var canSeeCustom = false;
     
     var stats = {
         // We should never see these values.
@@ -22,189 +25,6 @@ $(document).ready(function(){
         'might': 0
     };
     
-    var armies = {
-        'conscript': {
-            'name': 'Conscripts',
-            'joinbattle': 5,
-            'attack': 7,
-            'attacktype': 'sword',
-            'damage': 12,
-            'magnitude': 6,
-            'soak': 6,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 2
-        },
-        'soldier': {
-            'name': 'Battle-Ready Troops',
-            'joinbattle': 6,
-            'attack': 5,
-            'attacktype': 'sword',
-            'damage': 14,
-            'magnitude': 6,
-            'soak': 8,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 4
-        },
-        'elite': {
-            'name': 'Elite Troops',
-            'joinbattle': 10,
-            'attack': 11,
-            'attacktype': 'sword',
-            'damage': 12,
-            'magnitude': 6,
-            'soak': 10,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 5
-        },
-        'nomad': {
-            'name': 'Nomad Horse-Archers',
-            'joinbattle': 6,
-            'attack': 11,
-            'attacktype': 'bow',
-            'damage': 10,
-            'magnitude': 6,
-            'soak': 8,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 4
-        },
-        'reaver': {
-            'name': 'Lintha Reaver',
-            'joinbattle': 6,
-            'attack': 7,
-            'attacktype': 'axe',
-            'damage': 12,
-            'magnitude': 6,
-            'soak': 8,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 4
-        },
-        'bride': {
-            'name': 'Brides of Ahlat',
-            'joinbattle': 8,
-            'attack': 10,
-            'attacktype': 'spear',
-            'damage': 11,
-            'magnitude': 6,
-            'soak': 4,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 5
-        },
-        'automaton': {
-            'name': 'Automata',
-            'joinbattle': 8,
-            'attack': 8,
-            'attacktype': 'sword',
-            'damage': 16,
-            'magnitude': 12,
-            'soak': 13,
-            'command': 0,
-            'routdiff': 100,
-            'defense': 4
-        },
-        'zombie': {
-            'name': 'Zombies',
-            'joinbattle': 2,
-            'attack': 5,
-            'attacktype': 'claw',
-            'damage': 16,
-            'magnitude': 9,
-            'soak': 3,
-            'command': 0,
-            'routdiff': 100,
-            'defense': 2
-        },
-        'warghost': {
-            'name': 'War Ghosts',
-            'joinbattle': 5,
-            'attack': 7,
-            'attacktype': 'sword',
-            'damage': 12,
-            'magnitude': 10,
-            'soak': 8,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 4
-        },
-        'bonesider': {
-            'name': 'Bonesiders',
-            'joinbattle': 6,
-            'attack': 6,
-            'attacktype': 'claw',
-            'damage': 11,
-            'magnitude': 6,
-            'soak': 4,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 4
-        },
-        'bloodape': {
-            'name': 'Blood Apes',
-            'joinbattle': 6,
-            'attack': 11,
-            'attacktype': 'claw',
-            'damage': 15,
-            'magnitude': 8,
-            'soak': 7,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 4
-        },
-        'cataphract': {
-            'name': 'Fair Folk Cataphracts',
-            'joinbattle': 11,
-            'attack': 16,
-            'attacktype': 'sword',
-            'damage': 16,
-            'magnitude': 17,
-            'soak': 14,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 7
-        },
-        'hobgoblin': {
-            'name': 'Fair Folk Hobgoblins',
-            'joinbattle': 6,
-            'attack': 9,
-            'attacktype': 'talons',
-            'damage': 12,
-            'magnitude': 6,
-            'soak': 5,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 5
-        },
-        'silverwight': {
-            'name': 'Silverwights',
-            'joinbattle': 5,
-            'attack': 9,
-            'attacktype': 'claws',
-            'damage': 8,
-            'magnitude': 3,
-            'soak': 3,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 4
-        },
-        'buckogre': {
-            'name': 'Buck-Ogres',
-            'joinbattle': 8,
-            'attack': 8,
-            'attacktype': 'antlers',
-            'damage': 16,
-            'magnitude': 11,
-            'soak': 13,
-            'command': 0,
-            'routdiff': 1,
-            'defense': 5
-        }
-    }
-    
     function getStats(){
         for(key in armies[armyType]){
             stats[key] = armies[armyType][key];
@@ -213,36 +33,6 @@ $(document).ready(function(){
         return;
     }
     
-    function updateDisplay(){
-        
-        getStats();
-        
-        adjustMight();
-        adjustDrill();
-        adjustSize();
-
-        $('#armyname').text(stats.name);
-        $('#joinbattle').text(stats.joinbattle);
-        $('#attack').text(stats.attack);
-        $('#attacktype').text(stats.attacktype);
-        $('#damage').text(stats.damage);
-        $('#magnitude').text(stats.magnitude);
-        $('#soak').text(stats.soak);
-        $('#command').text(stats.command);
-        $('#defense').text(stats.defense);
-        $('#showsize').text(stats.size);
-        $('#showdrill').text(stats.drilltext);
-        $('#showmight').text(stats.might);
-
-        if(stats.routdiff > 50){
-            $('#routdiff').text('perfect morale');
-        }else{
-            $('#routdiff').text(stats.routdiff);
-        }
-
-    }
-    
-    updateDisplay();
 
     function setSize(event, ui){
         stats.size = ui.value;
@@ -313,6 +103,89 @@ $(document).ready(function(){
         return;
     }
     
+    function getCustomStats(){
+
+        if(!hasFormHandlers){
+
+            // add form handlers to update the custom stats on form changes.
+            $('.customtext').on('change keyup paste', function(){
+                var temp = $(this).attr('name');
+                var tempval = $(this).val();
+                var numeric = $(this).hasClass('numeric');
+                if($.isNumeric(tempval) && numeric){
+                    armies['custom'][temp] = Number(tempval);
+                }else{
+                    armies['custom'][temp] = tempval;
+                }
+                updateDisplay();
+            });
+            
+            $('.customcheck').change(function(){
+                
+                if(armies['custom']['routdiff'] != 100){
+                    armies['custom']['routdiff'] = 100;
+                }else{
+                    armies['custom']['routdiff'] = 1;
+                }
+                console.log(armies['custom']['routdiff']);
+                updateDisplay();
+            });
+            
+            hasFormHandlers = true;
+            
+        }
+        // If we already have form handlers, don't add them again.
+        // Just put the numbers back into the form in the right place.
+        for(key in armies['custom']){
+            $( 'input[name=' + key + ']' ).val( armies['custom'][key] );
+        }
+        if(armies['custom']['routdiff'] < 50){
+            document.getElementById('pm_box').checked = false;
+        }else{
+            document.getElementById('pm_box').checked = true;
+        }
+
+    }
+    
+    function getStats(){
+        for(key in armies[armyType]){
+            stats[key] = armies[armyType][key];
+        }
+
+        return;
+    }
+
+    function updateDisplay(){
+                
+        getStats();
+        
+        adjustMight();
+        adjustDrill();
+        adjustSize();
+
+        $('#armyname').text(stats.name);
+        $('#joinbattle').text(stats.joinbattle);
+        $('#attack').text(stats.attack);
+        $('#attacktype').text(stats.attacktype);
+        $('#damage').text(stats.damage);
+        $('#magnitude').text(stats.magnitude);
+        $('#soak').text(stats.soak);
+        $('#command').text(stats.command);
+        $('#defense').text(stats.defense);
+        $('#showsize').text(stats.size);
+        $('#showdrill').text(stats.drilltext);
+        $('#showmight').text(stats.might);
+
+        if(stats.routdiff > 50){
+            $('#routdiff').text('perfect morale');
+        }else{
+            $('#routdiff').text(stats.routdiff);
+        }
+
+    }
+    
+    updateDisplay();
+    
     $("#sizeslider").slider({
         orientation: "horizontal",
         min: 1,
@@ -340,14 +213,42 @@ $(document).ready(function(){
         change: setMight
     });
     
+    // Make the select menu all JQuery UI fancy.
     $('#armytype').selectmenu({
         select: function(event, ui) {
             armyType = this.value;
+            if(armyType === 'custom'){
+                canSeeCustom = true;
+                $('.custombox').show();
+                getCustomStats();
+            }else{
+                canSeeCustom = false;
+                $('.custombox').hide();
+            }        
             updateDisplay();
         }
     });
     
+    // Set up the menu so it's on the same option every time the page opens.
     $('#armytype').val('soldier');
     $('#armytype').selectmenu('refresh');
+
+    // Handle the switch between regular look and printer-friendly
+    $('#get-printable').button().on('click tap', function(){
+        isPrintable = ! isPrintable;
+        if(isPrintable){
+            $('.dontprint').hide();
+            $('#armystats').addClass('clear');
+            $('.bigbox').addClass('clear');
+            if(canSeeCustom){ $('.custombox').hide(); }
+            $('#get-printable .ui-button-text').text('Back to Regular Version');
+        }else{
+            $('.dontprint').show();
+            $('#armystats').removeClass('clear');
+            $('.bigbox').removeClass('clear');
+            if(canSeeCustom){ $('.custombox').show(); }
+            $('#get-printable .ui-button-text').text('Get Printable Version');
+        }
+    });
     
 });

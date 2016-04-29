@@ -1,3 +1,11 @@
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
+
 body {
     font-family: Verdana, sans-serif;
 }
@@ -19,7 +27,7 @@ p {
 }
 
 table {
-    border: 2px solid #b80;;
+    border: 2px solid #b80;
     padding: 0px 4px 8px 4px;
     background-color: rgb(250, 240, 190);
 }
@@ -31,6 +39,28 @@ th {
 
 td {
     padding-right: 4px;
+}
+
+#armystats {
+    display: inline-block;
+}
+
+#customstats {
+    display: inline-block;
+    background-color: #ec6;
+}
+
+table#armystats.clear{
+    border: none;
+    background-color: white;
+}
+
+#get-printable {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    margin-bottom: -36px;
+    font-size: 10pt;
 }
 
 #tabletitle {
@@ -55,16 +85,27 @@ td {
     font-weight: bold;
 }
 
-#armystats {
-    display: inline-block;
-}
-
 .bigbox {
     border: 2px solid #b80;
     background-color: #da3;
     float:left;
     white-space: nowrap;
     padding: 3px;
+    position: relative;
+}
+
+.bigbox.clear{
+    border: none;
+    background-color: white;
+    float:none;
+}
+
+.hidden {
+    display: none;
+}
+
+.dontprint {
+    
 }
 
 .leftbox {
