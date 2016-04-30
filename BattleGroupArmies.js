@@ -131,6 +131,18 @@ var armies = {
         'routdiff': 1,
         'defense': 4
     },
+    'greenmaw': {
+        'name': 'Grenmaws',
+        'joinbattle': 8,
+        'attack': 10,
+        'attacktype': 'tail',
+        'damage': 17,
+        'magnitude': 15,
+        'soak': 10,
+        'command': 0,
+        'routdiff': 1,
+        'defense': 5
+    },
     'bloodape': {
         'name': 'Blood Apes',
         'joinbattle': 6,
