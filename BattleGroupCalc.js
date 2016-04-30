@@ -169,11 +169,18 @@ $(document).ready(function(){
         $('#showmight').text(stats.might);
         $('#senses').text(stats.senses);
         $('#resolve').text(stats.resolve);
+        $('#resist').text(stats.resist);
 
         if(stats.routdiff > 50){
             $('#routdiff').text('perfect morale');
         }else{
             $('#routdiff').text(stats.routdiff);
+        }
+
+        if(stats.resist > 50){
+            $('#resist').text('immune');
+        }else{
+            $('#resist').text(stats.resist);
         }
 
     }

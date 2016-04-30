@@ -10,6 +10,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 0,
+        'resist': 0,
         'senses': 0,
         'resolve': 0
     },
@@ -24,6 +25,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 2,
+        'resist': 2,
         'senses': 4,
         'resolve': 1
     },
@@ -38,6 +40,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 4,
+        'resist': 2,
         'senses': 4,
         'resolve': 2
     },
@@ -52,6 +55,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 5,
+        'resist': 2,
         'senses': 9,
         'resolve': 4
     },
@@ -65,6 +69,7 @@ var armies = {
         'soak': 8,
         'command': 0,
         'routdiff': 1,
+        'resist': 2,
         'defense': 4,
         'senses': 7,
         'resolve': 4
@@ -79,6 +84,7 @@ var armies = {
         'soak': 8,
         'command': 0,
         'routdiff': 1,
+        'resist': 2,
         'defense': 4,
         'senses': 5,
         'resolve': 3
@@ -94,6 +100,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 5,
+        'resist': 2,
         'senses': 4,
         'resolve': 4
     },
@@ -107,6 +114,7 @@ var armies = {
         'soak': 13,
         'command': 0,
         'routdiff': 100,
+        'resist': 100,
         'defense': 4,
         'senses': 1,
         'resolve': 5
@@ -121,6 +129,7 @@ var armies = {
         'soak': 3,
         'command': 0,
         'routdiff': 100,
+        'resist': 100,
         'defense': 2,
         'senses': 4,
         'resolve': 1
@@ -136,6 +145,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 4,
+        'resist': 100,
         'senses': 5,
         'resolve': 4
     },
@@ -150,6 +160,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 4,
+        'resist': 100,
         'senses': 1,
         'resolve': 2
     },
@@ -164,6 +175,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 5,
+        'resist': 9,
         'senses': 9,
         'resolve': 3
     },
@@ -178,6 +190,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 4,
+        'resist': 8,
         'senses': 6,
         'resolve': 3
     },
@@ -192,6 +205,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 7,
+        'resist': 12,
         'senses': 11,
         'resolve': 4
     },
@@ -206,6 +220,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 5,
+        'resist': 6,
         'senses': 4,
         'resolve': 2
     },
@@ -220,6 +235,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 4,
+        'resist': 2,
         'senses': 5,
         'resolve': 1
     },
@@ -234,6 +250,7 @@ var armies = {
         'command': 0,
         'routdiff': 1,
         'defense': 5,
+        'resist': 2,
         'senses': 8,
         'resolve': 4
     }
