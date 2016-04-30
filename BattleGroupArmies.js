@@ -19,8 +19,7 @@ var armies = {
         'joinbattle': 5,
         'attacks': [
             { 'type': 'Short sword', 'dice': 6, 'damage': 11, 'minimum': 2 },
-            { 'type': 'Self bow', 'dice': 8, 'damage': 9 },
-            { 'type': 'Grapple', 'dice': 4, 'control': 5 }
+            { 'type': 'Self bow', 'dice': 8, 'damage': 9 }
         ],
         'magnitude': 7,
         'soak': 6,
@@ -86,8 +85,7 @@ var armies = {
         'attacks': [
             { 'type': 'Axe', 'dice': 7, 'damage': 12, 'minimum': 2 },
             { 'type': 'Dagger', 'dice': 9, 'damage': 10 },
-            { 'type': 'Javelin', 'dice': 8, 'damage': 12 },
-            { 'type': 'Grapple', 'dice': 5, 'control': 6}
+            { 'type': 'Javelin', 'dice': 8, 'damage': 12 }
         ],
         'magnitude': 7,
         'soak': 8,

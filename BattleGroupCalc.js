@@ -193,7 +193,7 @@ $(document).ready(function(){
                     extraAttacks += ')';
                 }
                 if (line.control) {
-                    extraAttacks += '(' + line.control + ' dice to control)';
+                    extraAttacks += ' (' + line.control + ' dice to control)';
                 }
                 extraAttacks += '</td></tr>'
             }
