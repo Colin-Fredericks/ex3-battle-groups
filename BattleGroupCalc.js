@@ -147,14 +147,6 @@ $(document).ready(function(){
 
     }
     
-    function getStats(){
-        for(key in armies[armyType]){
-            stats[key] = armies[armyType][key];
-        }
-
-        return;
-    }
-
     function updateDisplay(){
                 
         getStats();
