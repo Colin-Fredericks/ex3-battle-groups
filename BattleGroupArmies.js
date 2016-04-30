@@ -17,9 +17,11 @@ var armies = {
     'conscript': {
         'name': 'Conscripts',
         'joinbattle': 5,
-        'attack': 6,
-        'attacktype': 'sword',
-        'damage': 11,
+        'attacks': [
+            { 'type': 'Short sword', 'dice': 6, 'damage': 11, 'minimum': 2 },
+            { 'type': 'Self bow', 'dice': 8, 'damage': 9 },
+            { 'type': 'Grapple', 'dice': 4, 'control': 5 }
+        ],
         'magnitude': 7,
         'soak': 6,
         'command': 0,
@@ -32,9 +34,11 @@ var armies = {
     'soldier': {
         'name': 'Battle-Ready Troops',
         'joinbattle': 6,
-        'attack': 7,
-        'attacktype': 'sword',
-        'damage': 12,
+        'attacks': [
+            { 'type': 'Chopping sword', 'dice': 7, 'damage': 12, 'minimum': 2 },
+            { 'type': 'Long spear', 'dice': 5, 'damage': 14 },
+            { 'type': 'Shield bash', 'dice': 6, 'damage': 12 }
+        ],
         'magnitude': 7,
         'soak': 8,
         'command': 0,
@@ -47,9 +51,9 @@ var armies = {
     'elite': {
         'name': 'Elite Troops',
         'joinbattle': 10,
-        'attack': 11,
-        'attacktype': 'sword',
-        'damage': 12,
+        'attacks': [
+            { 'type': 'Slashing sword', 'dice': 11, 'damage': 12, 'minimum': 2 }
+        ],
         'magnitude': 7,
         'soak': 10,
         'command': 0,
@@ -62,9 +66,11 @@ var armies = {
     'nomad': {
         'name': 'Nomad Horse-Archers',
         'joinbattle': 6,
-        'attack': 11,
-        'attacktype': 'bow',
-        'damage': 10,
+        'attacks': [
+            { 'type': 'Scimitar', 'dice': 9, 'damage': 12, 'minimum': 2 },
+            { 'type': 'Long spear', 'dice': 8, 'damage': 14 },
+            { 'type': 'Self bow', 'dice': 11, 'damage': 10 }
+        ],
         'magnitude': 7,
         'soak': 8,
         'command': 0,
@@ -77,9 +83,12 @@ var armies = {
     'reaver': {
         'name': 'Lintha Reaver',
         'joinbattle': 6,
-        'attack': 7,
-        'attacktype': 'axe',
-        'damage': 12,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 12, 'minimum': 2 },
+            { 'type': 'Dagger', 'dice': 9, 'damage': 10 },
+            { 'type': 'Javelin', 'dice': 8, 'damage': 12 },
+            { 'type': 'Grapple', 'dice': 5, 'control': 6}
+        ],
         'magnitude': 7,
         'soak': 8,
         'command': 0,
@@ -92,9 +101,12 @@ var armies = {
     'bride': {
         'name': 'Brides of Ahlat',
         'joinbattle': 8,
-        'attack': 10,
-        'attacktype': 'spear',
-        'damage': 11,
+        'attacks': [
+            { 'type': 'Short spear', 'dice': 10, 'damage': 11 },
+            { 'type': 'Shield bash', 'dice': 5, 'damage': 13 },
+            { 'type': 'Firewand', 'dice': 9, 'damage': 11, 'minimum': 2 },
+            { 'type': 'Sling', 'dice': 8, 'damage': 11 }
+        ],
         'magnitude': 7,
         'soak': 4,
         'command': 0,

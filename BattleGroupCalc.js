@@ -26,10 +26,17 @@ $(document).ready(function(){
     };
     
     function getStats(){
-        for(key in armies[armyType]){
-            stats[key] = armies[armyType][key];
-        }
-
+        // stats[key] = armies[armyType][key] won't work for nested reference types
+        // this is a quick and easy workaround. there are better solutions.
+        // consider keeping the size/drill/might/troop selection separate from the armies data.
+        // then, rebuild the presentation layer every time something changes. -KR
+        var size = stats.size || 0;
+        var drill = stats.drill || 0;
+        var might = stats.might || 0;
+        stats = JSON.parse(JSON.stringify(armies[armyType]));
+        stats.size = size;
+        stats.drill = drill;
+        stats.might = might;
         return;
     }
     
@@ -41,11 +48,23 @@ $(document).ready(function(){
         return;
     }
     
+    function increaseAttackDamage(atk, dmg) {
+        atk = atk || 0;
+        dmg = dmg || 0;
+        if(stats.attack) { stats.attack += atk; }
+        if(stats.damage) { stats.damage += dmg; }
+        if(stats.attacks) {
+            for(var i = 0, l = stats.attacks.length; i < l; i++) {
+               stats.attacks[i].dice += atk;
+               stats.attacks[i].damage += dmg;
+            }
+        }
+    }
+    
     function adjustSize(){
-        stats.attack += stats.size;
-        stats.damage += stats.size;
-        stats.magnitude += stats.size;
-        stats.soak += stats.size;
+        increaseAttackDamage(stats.size, stats.size);
+        stats.magnitude += stats.size || 0;
+        stats.soak += stats.size || 0;
         return;
     }
     
@@ -83,22 +102,18 @@ $(document).ready(function(){
     }
     
     function adjustMight(){
-
+        
         if(stats.might == 0){
             // no change
         }else if(stats.might == 1){
-            stats.attack += 1;
-            stats.damage += 1;
             stats.defense += 1;
         }else if(stats.might == 2){
-            stats.attack += 2;
-            stats.damage += 2;
             stats.defense += 1;
         }else if(stats.might == 3){
-            stats.attack += 3;
-            stats.damage += 3;
             stats.defense += 2;
         }
+        
+        increaseAttackDamage(stats.might, stats.might);
 
         return;
     }
@@ -146,7 +161,7 @@ $(document).ready(function(){
         }
 
     }
-    
+
     function updateDisplay(){
                 
         getStats();
@@ -157,9 +172,35 @@ $(document).ready(function(){
 
         $('#armyname').text(stats.name);
         $('#joinbattle').text(stats.joinbattle);
-        $('#attack').text(stats.attack);
-        $('#attacktype').text(stats.attacktype);
-        $('#damage').text(stats.damage);
+        if(stats.attack) {
+            $('#singleattack').show();
+            $('#attack').text(stats.attack);
+            $('#attacktype').text(stats.attacktype);
+            $('#damage').text(stats.damage);
+        } else {
+            $('#singleattack').hide();
+        }
+        if(stats.attacks) {
+            var extraAttacks = '';
+            for(var i = 0, l = stats.attacks.length; i < l; i++) {
+                var line = stats.attacks[i];
+                extraAttacks += '<tr><th>Attack(' + line.type + ')</th><td>' + line.dice;
+                if(line.damage) {
+                    extraAttacks += '(Damage ' + line.damage;
+                    if(line.minimum) {
+                        extraAttacks += ', minimum ' + line.minimum;
+                    }
+                    extraAttacks += ')';
+                }
+                if (line.control) {
+                    extraAttacks += '(' + line.control + ' dice to control)';
+                }
+                extraAttacks += '</td></tr>'
+            }
+            $('#multipleattacks').html(extraAttacks).show();
+        } else {
+            $('#multipleattacks').hide();
+        }
         $('#magnitude').text(stats.magnitude);
         $('#soak').text(stats.soak);
         $('#command').text(stats.command);
