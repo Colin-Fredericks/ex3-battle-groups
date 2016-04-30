@@ -14,9 +14,9 @@ var armies = {
     'conscript': {
         'name': 'Conscripts',
         'joinbattle': 5,
-        'attack': 7,
+        'attack': 6,
         'attacktype': 'sword',
-        'damage': 12,
+        'damage': 11,
         'magnitude': 7,
         'soak': 6,
         'command': 0,
@@ -26,9 +26,9 @@ var armies = {
     'soldier': {
         'name': 'Battle-Ready Troops',
         'joinbattle': 6,
-        'attack': 5,
+        'attack': 7,
         'attacktype': 'sword',
-        'damage': 14,
+        'damage': 12,
         'magnitude': 7,
         'soak': 8,
         'command': 0,
