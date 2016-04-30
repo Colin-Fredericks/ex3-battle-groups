@@ -167,6 +167,8 @@ $(document).ready(function(){
         $('#showsize').text(stats.size);
         $('#showdrill').text(stats.drilltext);
         $('#showmight').text(stats.might);
+        $('#senses').text(stats.senses);
+        $('#resolve').text(stats.resolve);
 
         if(stats.routdiff > 50){
             $('#routdiff').text('perfect morale');

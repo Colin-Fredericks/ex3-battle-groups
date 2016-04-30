@@ -9,7 +9,9 @@ var armies = {
         'soak': 0,
         'command': 0,
         'routdiff': 1,
-        'defense': 0
+        'defense': 0,
+        'senses': 0,
+        'resolve': 0
     },
     'conscript': {
         'name': 'Conscripts',
@@ -21,7 +23,9 @@ var armies = {
         'soak': 6,
         'command': 0,
         'routdiff': 1,
-        'defense': 2
+        'defense': 2,
+        'senses': 4,
+        'resolve': 1
     },
     'soldier': {
         'name': 'Battle-Ready Troops',
@@ -33,7 +37,9 @@ var armies = {
         'soak': 8,
         'command': 0,
         'routdiff': 1,
-        'defense': 4
+        'defense': 4,
+        'senses': 4,
+        'resolve': 2
     },
     'elite': {
         'name': 'Elite Troops',
@@ -45,7 +51,9 @@ var armies = {
         'soak': 10,
         'command': 0,
         'routdiff': 1,
-        'defense': 5
+        'defense': 5,
+        'senses': 9,
+        'resolve': 4
     },
     'nomad': {
         'name': 'Nomad Horse-Archers',
@@ -57,7 +65,9 @@ var armies = {
         'soak': 8,
         'command': 0,
         'routdiff': 1,
-        'defense': 4
+        'defense': 4,
+        'senses': 7,
+        'resolve': 4
     },
     'reaver': {
         'name': 'Lintha Reaver',
@@ -69,7 +79,9 @@ var armies = {
         'soak': 8,
         'command': 0,
         'routdiff': 1,
-        'defense': 4
+        'defense': 4,
+        'senses': 5,
+        'resolve': 3
     },
     'bride': {
         'name': 'Brides of Ahlat',
@@ -81,7 +93,9 @@ var armies = {
         'soak': 4,
         'command': 0,
         'routdiff': 1,
-        'defense': 5
+        'defense': 5,
+        'senses': 4,
+        'resolve': 4
     },
     'automaton': {
         'name': 'Automata',
@@ -93,7 +107,9 @@ var armies = {
         'soak': 13,
         'command': 0,
         'routdiff': 100,
-        'defense': 4
+        'defense': 4,
+        'senses': 1,
+        'resolve': 5
     },
     'zombie': {
         'name': 'Zombies',
@@ -105,7 +121,9 @@ var armies = {
         'soak': 3,
         'command': 0,
         'routdiff': 100,
-        'defense': 2
+        'defense': 2,
+        'senses': 4,
+        'resolve': 1
     },
     'warghost': {
         'name': 'War Ghosts',
@@ -117,7 +135,9 @@ var armies = {
         'soak': 8,
         'command': 0,
         'routdiff': 1,
-        'defense': 4
+        'defense': 4,
+        'senses': 5,
+        'resolve': 4
     },
     'bonesider': {
         'name': 'Bonesiders',
@@ -129,7 +149,9 @@ var armies = {
         'soak': 4,
         'command': 0,
         'routdiff': 1,
-        'defense': 4
+        'defense': 4,
+        'senses': 1,
+        'resolve': 2
     },
     'greenmaw': {
         'name': 'Grenmaws',
@@ -141,7 +163,9 @@ var armies = {
         'soak': 10,
         'command': 0,
         'routdiff': 1,
-        'defense': 5
+        'defense': 5,
+        'senses': 9,
+        'resolve': 3
     },
     'bloodape': {
         'name': 'Blood Apes',
@@ -153,7 +177,9 @@ var armies = {
         'soak': 7,
         'command': 0,
         'routdiff': 1,
-        'defense': 4
+        'defense': 4,
+        'senses': 6,
+        'resolve': 3
     },
     'cataphract': {
         'name': 'Fair Folk Cataphracts',
@@ -165,7 +191,9 @@ var armies = {
         'soak': 14,
         'command': 0,
         'routdiff': 1,
-        'defense': 7
+        'defense': 7,
+        'senses': 11,
+        'resolve': 4
     },
     'hobgoblin': {
         'name': 'Fair Folk Hobgoblins',
@@ -177,7 +205,9 @@ var armies = {
         'soak': 5,
         'command': 0,
         'routdiff': 1,
-        'defense': 5
+        'defense': 5,
+        'senses': 4,
+        'resolve': 2
     },
     'silverwight': {
         'name': 'Silverwights',
@@ -189,7 +219,9 @@ var armies = {
         'soak': 3,
         'command': 0,
         'routdiff': 1,
-        'defense': 4
+        'defense': 4,
+        'senses': 5,
+        'resolve': 1
     },
     'buckogre': {
         'name': 'Buck-Ogres',
@@ -201,7 +233,9 @@ var armies = {
         'soak': 13,
         'command': 0,
         'routdiff': 1,
-        'defense': 5
+        'defense': 5,
+        'senses': 8,
+        'resolve': 4
     }
 }
 
