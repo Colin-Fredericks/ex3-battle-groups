@@ -172,7 +172,7 @@ $(document).ready(function(){
 
         $('#armyname').text(stats.name);
         $('#joinbattle').text(stats.joinbattle);
-        if(stats.attack) {
+        if(typeof stats.attack !== 'undefined') {
             $('#singleattack').show();
             $('#attack').text(stats.attack);
             $('#attacktype').text(stats.attacktype);
@@ -184,11 +184,11 @@ $(document).ready(function(){
             var extraAttacks = '';
             for(var i = 0, l = stats.attacks.length; i < l; i++) {
                 var line = stats.attacks[i];
-                extraAttacks += '<tr><th>Attack(' + line.type + ')</th><td>' + line.dice;
+                extraAttacks += '<tr><th>Attack (' + line.type + ')</th><td>' + line.dice;
                 if(line.damage) {
-                    extraAttacks += '(Damage ' + line.damage;
+                    extraAttacks += ' (Dmg ' + line.damage;
                     if(line.minimum) {
-                        extraAttacks += ', minimum ' + line.minimum;
+                        extraAttacks += ', min ' + line.minimum;
                     }
                     extraAttacks += ')';
                 }

@@ -119,9 +119,10 @@ var armies = {
     'automaton': {
         'name': 'Automata',
         'joinbattle': 8,
-        'attack': 8,
-        'attacktype': 'sword',
-        'damage': 16,
+        'attacks': [
+            { 'type': 'Sword', 'dice': 8, 'damage': 16, 'minimum': 2 },
+            { 'type': 'Unarmed', 'dice': 10, 'damage': 14 }
+        ],
         'magnitude': 13,
         'soak': 13,
         'command': 0,
@@ -134,9 +135,9 @@ var armies = {
     'zombie': {
         'name': 'Zombies',
         'joinbattle': 2,
-        'attack': 5,
-        'attacktype': 'claw',
-        'damage': 16,
+        'attacks': [
+            { 'type': 'Bite', 'dice': 5, 'damage': 16 }
+        ],
         'magnitude': 10,
         'soak': 3,
         'command': 0,
@@ -149,9 +150,9 @@ var armies = {
     'warghost': {
         'name': 'War Ghosts',
         'joinbattle': 5,
-        'attack': 7,
-        'attacktype': 'sword',
-        'damage': 12,
+        'attacks': [
+            { 'type': 'Sword', 'dice': 7, 'damage': 12, 'minimum': 2 }
+        ],
         'magnitude': 11,
         'soak': 8,
         'command': 0,
@@ -164,9 +165,9 @@ var armies = {
     'bonesider': {
         'name': 'Bonesiders',
         'joinbattle': 6,
-        'attack': 6,
-        'attacktype': 'claw',
-        'damage': 11,
+        'attacks': [
+            { 'type': 'Claw', 'dice': 6, 'damage': 11 }
+        ],
         'magnitude': 7,
         'soak': 4,
         'command': 0,
@@ -179,9 +180,10 @@ var armies = {
     'greenmaw': {
         'name': 'Grenmaws',
         'joinbattle': 8,
-        'attack': 10,
-        'attacktype': 'tail',
-        'damage': 17,
+        'attacks': [
+            { 'type': 'Bite', 'dice': 8, 'damage': 19, 'minimum': 2 },
+            { 'type': 'Tail Slam', 'dice': 10, 'damage': 17 }
+        ],
         'magnitude': 15,
         'soak': 10,
         'command': 0,
@@ -194,9 +196,9 @@ var armies = {
     'bloodape': {
         'name': 'Blood Apes',
         'joinbattle': 6,
-        'attack': 11,
-        'attacktype': 'claw',
-        'damage': 15,
+        'attacks': [
+            { 'type': 'Claws', 'dice': 11, 'damage': 15 }
+        ],
         'magnitude': 9,
         'soak': 7,
         'command': 0,
@@ -209,9 +211,10 @@ var armies = {
     'cataphract': {
         'name': 'Fair Folk Cataphracts',
         'joinbattle': 11,
-        'attack': 16,
-        'attacktype': 'sword',
-        'damage': 16,
+        'attacks': [
+            { 'type': 'Horizon Cutter', 'dice': 16, 'damage': 16, 'minimum': 2 },
+            { 'type': 'Dream Curdling Bow', 'dice': 14, 'damage': 16 }
+        ],
         'magnitude': 18,
         'soak': 14,
         'command': 0,
@@ -224,9 +227,10 @@ var armies = {
     'hobgoblin': {
         'name': 'Fair Folk Hobgoblins',
         'joinbattle': 6,
-        'attack': 9,
-        'attacktype': 'talons',
-        'damage': 12,
+        'attacks': [
+            { 'type': 'Bite', 'dice': 7, 'damage': 14 },
+            { 'type': 'Talons', 'dice': 9, 'damage': 12 }
+        ],
         'magnitude': 7,
         'soak': 5,
         'command': 0,
@@ -239,9 +243,10 @@ var armies = {
     'silverwight': {
         'name': 'Silverwights',
         'joinbattle': 5,
-        'attack': 9,
-        'attacktype': 'claws',
-        'damage': 8,
+        'attacks': [
+            { 'type': 'Bite', 'dice': 5, 'damage': 12 },
+            { 'type': 'Claws', 'dice': 9, 'damage': 8 }
+        ],
         'magnitude': 4,
         'soak': 3,
         'command': 0,
@@ -254,9 +259,11 @@ var armies = {
     'buckogre': {
         'name': 'Buck-Ogres',
         'joinbattle': 8,
-        'attack': 8,
-        'attacktype': 'antlers',
-        'damage': 16,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
         'magnitude': 12,
         'soak': 13,
         'command': 0,
