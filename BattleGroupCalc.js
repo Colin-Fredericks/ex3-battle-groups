@@ -207,9 +207,9 @@ $(document).ready(function(){
         $('#soak').text(stats.soak);
         $('#command').text(stats.command);
         $('#defense').text(stats.defense);
-        $('#showsize').text(stats.size);
-        $('#showdrill').text(stats.drilltext);
-        $('#showmight').text(stats.might);
+        $('.showsize').text(stats.size);
+        $('.showdrill').text(stats.drilltext);
+        $('.showmight').text(stats.might);
         $('#senses').text(stats.senses);
         $('#resolve').text(stats.resolve);
         $('#resist').text(stats.resist);
@@ -294,12 +294,14 @@ $(document).ready(function(){
         isPrintable = ! isPrintable;
         if(isPrintable){
             $('.dontprint').hide();
+            $('.printonly').show();
             $('#armystats').addClass('clear');
             $('.bigbox').addClass('clear');
             if(canSeeCustom){ $('.custombox').hide(); }
             $('#get-printable .ui-button-text').text('Back to Regular Version');
         }else{
             $('.dontprint').show();
+            $('.printonly').hide();
             $('#armystats').removeClass('clear');
             $('.bigbox').removeClass('clear');
             if(canSeeCustom){ $('.custombox').show(); }
@@ -343,7 +345,7 @@ $(document).ready(function(){
         armies[armyKey] = $.extend(true, {}, stats);
 
         // Add it to the top of the drop-down menu
-        armyMenu.prepend('<option value="' + armyKey +'">' + armies[armyKey].name + '</option>');
+        $('<option/>').attr('value', armyKey).text(armies[armyKey].name).appendTo(armyMenu);
     
         // Select new troop type.
         armyMenu.select(armyKey);

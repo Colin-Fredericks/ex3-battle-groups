@@ -104,12 +104,20 @@ table#armystats.clear{
     float:none;
 }
 
+.divider {
+    border-bottom: 2px dotted black;
+}
+
 .hidden {
     display: none;
 }
 
 .dontprint {
     
+}
+
+.printonly {
+    display: none;
 }
 
 .leftbox {

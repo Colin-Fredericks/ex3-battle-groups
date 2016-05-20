@@ -46,18 +46,21 @@
         <div class="selectorbox">
             <div class="allsliders">
                 <div id="sizeslider" class="slider"></div>
-                <p>Size: <span id="showsize"></span></p>
+                <p>Size: <span class="showsize"></span></p>
                 <div id="drillslider" class="slider"></div>
-                <p>Drill: <span id="showdrill"></span></p>
+                <p>Drill: <span class="showdrill"></span></p>
                 <div id="mightslider" class="slider"></div>
-                <p>Might: <span id="showmight"></span></p>
+                <p>Might: <span class="showmight"></span></p>
             </div>
         </div>
 
     </div>
-
+    
     <table id="armystats">
         <tr><th colspan="2" id="tabletitle"><h3 id="armyname">Javascript is off</h3></th></tr>
+        <tr class="printonly"><th>Size:</th><td class="showsize"></td></tr>
+        <tr class="printonly"><th>Drill:</th><td class="showdrill"></td></tr>
+        <tr class="printonly"><th class="divider">Might:</th><td class="showmight divider"></td></tr>
         <tr><th>Join Battle:</th><td id="joinbattle"></td></tr>
         <tbody id="singleattack">
             <tr><th>Attack:</th><td><span id="attack"></span> <span id="attacktype"></span></td></tr>
