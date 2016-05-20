@@ -63,6 +63,10 @@ table#armystats.clear{
     font-size: 10pt;
 }
 
+#save-local, #delete-local, #clear-local {
+    font-size: 10pt;
+}
+
 #tabletitle {
     text-align: center;
 }

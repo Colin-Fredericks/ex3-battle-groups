@@ -1,6 +1,7 @@
 $(document).ready(function(){
     
     var armyType = 'soldier';
+    var armyMenu = $('#armytype');
     var hasFormHandlers = false;
     var isPrintable = false;
     var canSeeCustom = false;
@@ -22,7 +23,8 @@ $(document).ready(function(){
         'size': 1,
         'drill': 2,
         'drilltext': 'Average',
-        'might': 0
+        'might': 0,
+        'iscustom': false
     };
     
     function getStats(){
@@ -128,21 +130,21 @@ $(document).ready(function(){
                 var tempval = $(this).val();
                 var numeric = $(this).hasClass('numeric');
                 if($.isNumeric(tempval) && numeric){
-                    armies['custom'][temp] = Number(tempval);
+                    armies[armyType][temp] = Number(tempval);
                 }else{
-                    armies['custom'][temp] = tempval;
+                    armies[armyType][temp] = tempval;
                 }
                 updateDisplay();
             });
             
             $('.customcheck').change(function(){
                 
-                if(armies['custom']['routdiff'] != 100){
-                    armies['custom']['routdiff'] = 100;
+                if(armies[armyType]['routdiff'] != 100){
+                    armies[armyType]['routdiff'] = 100;
                 }else{
-                    armies['custom']['routdiff'] = 1;
+                    armies[armyType]['routdiff'] = 1;
                 }
-                console.log(armies['custom']['routdiff']);
+                console.log(armies[armyType]['routdiff']);
                 updateDisplay();
             });
             
@@ -151,10 +153,10 @@ $(document).ready(function(){
         }
         // If we already have form handlers, don't add them again.
         // Just put the numbers back into the form in the right place.
-        for(key in armies['custom']){
-            $( 'input[name=' + key + ']' ).val( armies['custom'][key] );
+        for(var key in armies[armyType]){
+            $( 'input[name=' + key + ']' ).val( armies[armyType][key] );
         }
-        if(armies['custom']['routdiff'] < 50){
+        if(armies[armyType]['routdiff'] < 50){
             document.getElementById('pm_box').checked = false;
         }else{
             document.getElementById('pm_box').checked = true;
@@ -255,11 +257,23 @@ $(document).ready(function(){
         change: setMight
     });
     
+    // Add any custom armies stored locally to the drop-down menu and to the armies list.
+    if(typeof Storage !== 'undefined') {
+        if(typeof localStorage.BattleGroupSaves !== 'undefined' && localStorage.BattleGroupSaves !== ''){
+            var savedArmies = JSON.parse(localStorage.BattleGroupSaves);
+            for(var key in savedArmies){
+                var tempArmy = JSON.parse(savedArmies[key])
+                armyMenu.prepend('<option value="' + key +'">' + tempArmy.name + '</option>');
+                armies[key] = $.extend(true, {}, tempArmy);
+            }
+        }
+    }
+    
     // Make the select menu all JQuery UI fancy.
-    $('#armytype').selectmenu({
+    armyMenu.selectmenu({
         select: function(event, ui) {
             armyType = this.value;
-            if(armyType === 'custom'){
+            if(armies[armyType].iscustom){
                 canSeeCustom = true;
                 $('.custombox').show();
                 getCustomStats();
@@ -272,8 +286,8 @@ $(document).ready(function(){
     });
     
     // Set up the menu so it's on the same option every time the page opens.
-    $('#armytype').val('soldier');
-    $('#armytype').selectmenu('refresh');
+    armyMenu.val('soldier');
+    armyMenu.selectmenu('refresh');
 
     // Handle the switch between regular look and printer-friendly
     $('#get-printable').button().on('click tap', function(){
@@ -293,4 +307,57 @@ $(document).ready(function(){
         }
     });
     
+    $('#save-local').button().on('click tap', function(){
+        if(typeof Storage === 'undefined') {
+            alert('Your browser does not support this option');
+            return;
+        }
+        if(typeof localStorage.BattleGroupSaves === 'undefined'){
+            localStorage.BattleGroupSaves = '';
+        }
+        if(localStorage.BattleGroupSaves !== ''){
+            var savedArmies = JSON.parse(localStorage.BattleGroupSaves);
+        }else{
+            var savedArmies = {};
+        }
+        
+        var armyNumber = Object.keys(savedArmies).length;
+        var armyKey = 'army' + armyNumber.toString();
+        
+        console.log('saving army to HTML5 local storage');
+        
+        // If this is a duplicate, save over the old one.
+        for(var key in savedArmies){
+            if(savedArmies[key].name == stats.name){
+                savedArmies[key] = JSON.stringify(stats);
+                armies[key] = $.extend(true, {}, stats);
+                armyMenu.val(armyKey);
+                localStorage.BattleGroupSaves = JSON.stringify(savedArmies);
+                return;
+            }
+        }
+        
+        // Otherwise, create a new entry:
+        // Clone the current army stats to local storage and to the stats list.
+        savedArmies[armyKey] = JSON.stringify(stats);
+        armies[armyKey] = $.extend(true, {}, stats);
+
+        // Add it to the top of the drop-down menu
+        armyMenu.prepend('<option value="' + armyKey +'">' + armies[armyKey].name + '</option>');
+    
+        // Select new troop type.
+        armyMenu.val(armyKey);
+        
+        // Place things back in local storage
+        localStorage.BattleGroupSaves = JSON.stringify(savedArmies);
+
+    });
+
+    $('#delete-local').button().on('click tap', function(){
+        
+    });    
+
+    $('#clear-local').button().on('click tap', function(){
+        localStorage.BattleGroupSaves = '';
+    });
 });

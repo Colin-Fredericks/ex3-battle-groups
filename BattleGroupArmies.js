@@ -12,7 +12,8 @@ var armies = {
         'defense': 0,
         'resist': 0,
         'senses': 0,
-        'resolve': 0
+        'resolve': 0,
+        'iscustom': true
     },
     'conscript': {
         'name': 'Conscripts',
@@ -28,7 +29,8 @@ var armies = {
         'defense': 2,
         'resist': 2,
         'senses': 4,
-        'resolve': 1
+        'resolve': 1,
+        'iscustom': false
     },
     'soldier': {
         'name': 'Battle-Ready Troops',
@@ -45,7 +47,8 @@ var armies = {
         'defense': 4,
         'resist': 2,
         'senses': 4,
-        'resolve': 2
+        'resolve': 2,
+        'iscustom': false
     },
     'elite': {
         'name': 'Elite Troops',
@@ -60,7 +63,8 @@ var armies = {
         'defense': 5,
         'resist': 2,
         'senses': 9,
-        'resolve': 4
+        'resolve': 4,
+        'iscustom': false
     },
     'nomad': {
         'name': 'Nomad Horse-Archers',
@@ -77,7 +81,8 @@ var armies = {
         'resist': 2,
         'defense': 4,
         'senses': 7,
-        'resolve': 4
+        'resolve': 4,
+        'iscustom': false
     },
     'reaver': {
         'name': 'Lintha Reaver',
@@ -94,7 +99,8 @@ var armies = {
         'resist': 2,
         'defense': 4,
         'senses': 5,
-        'resolve': 3
+        'resolve': 3,
+        'iscustom': false
     },
     'bride': {
         'name': 'Brides of Ahlat',
@@ -112,7 +118,8 @@ var armies = {
         'defense': 5,
         'resist': 2,
         'senses': 4,
-        'resolve': 4
+        'resolve': 4,
+        'iscustom': false
     },
     'automaton': {
         'name': 'Automata',
@@ -128,7 +135,8 @@ var armies = {
         'resist': 100,
         'defense': 4,
         'senses': 1,
-        'resolve': 5
+        'resolve': 5,
+        'iscustom': false
     },
     'zombie': {
         'name': 'Zombies',
@@ -143,7 +151,8 @@ var armies = {
         'resist': 100,
         'defense': 2,
         'senses': 4,
-        'resolve': 1
+        'resolve': 1,
+        'iscustom': false
     },
     'warghost': {
         'name': 'War Ghosts',
@@ -158,7 +167,8 @@ var armies = {
         'defense': 4,
         'resist': 100,
         'senses': 5,
-        'resolve': 4
+        'resolve': 4,
+        'iscustom': false
     },
     'bonesider': {
         'name': 'Bonesiders',
@@ -173,7 +183,8 @@ var armies = {
         'defense': 4,
         'resist': 100,
         'senses': 1,
-        'resolve': 2
+        'resolve': 2,
+        'iscustom': false
     },
     'greenmaw': {
         'name': 'Grenmaws',
@@ -189,7 +200,8 @@ var armies = {
         'defense': 5,
         'resist': 9,
         'senses': 9,
-        'resolve': 3
+        'resolve': 3,
+        'iscustom': false
     },
     'bloodape': {
         'name': 'Blood Apes',
@@ -204,7 +216,8 @@ var armies = {
         'defense': 4,
         'resist': 8,
         'senses': 6,
-        'resolve': 3
+        'resolve': 3,
+        'iscustom': false
     },
     'cataphract': {
         'name': 'Fair Folk Cataphracts',
@@ -220,7 +233,8 @@ var armies = {
         'defense': 7,
         'resist': 12,
         'senses': 11,
-        'resolve': 4
+        'resolve': 4,
+        'iscustom': false
     },
     'hobgoblin': {
         'name': 'Fair Folk Hobgoblins',
@@ -236,7 +250,8 @@ var armies = {
         'defense': 5,
         'resist': 6,
         'senses': 4,
-        'resolve': 2
+        'resolve': 2,
+        'iscustom': false
     },
     'silverwight': {
         'name': 'Silverwights',
@@ -252,7 +267,8 @@ var armies = {
         'defense': 4,
         'resist': 2,
         'senses': 5,
-        'resolve': 1
+        'resolve': 1,
+        'iscustom': false
     },
     'buckogre': {
         'name': 'Buck-Ogres',
@@ -269,7 +285,8 @@ var armies = {
         'defense': 5,
         'resist': 2,
         'senses': 8,
-        'resolve': 4
+        'resolve': 4,
+        'iscustom': false
     }
 }
 
