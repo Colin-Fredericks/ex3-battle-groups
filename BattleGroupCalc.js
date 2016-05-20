@@ -331,8 +331,8 @@ $(document).ready(function(){
             if(savedArmies[key].name == stats.name){
                 savedArmies[key] = JSON.stringify(stats);
                 armies[key] = $.extend(true, {}, stats);
-                armyMenu.val(armyKey);
                 localStorage.BattleGroupSaves = JSON.stringify(savedArmies);
+                armyMenu.select(armyKey);
                 return;
             }
         }
@@ -346,15 +346,19 @@ $(document).ready(function(){
         armyMenu.prepend('<option value="' + armyKey +'">' + armies[armyKey].name + '</option>');
     
         // Select new troop type.
-        armyMenu.val(armyKey);
+        armyMenu.select(armyKey);
         
         // Place things back in local storage
         localStorage.BattleGroupSaves = JSON.stringify(savedArmies);
 
     });
-
+    
+    // Remove the army from the saved list and the dropdown menu
     $('#delete-local').button().on('click tap', function(){
-        
+        $('option[value='+armyType+']').remove();
+        var savedArmies = JSON.parse(localStorage.BattleGroupSaves);
+        delete savedArmies[armyType];
+        localStorage.BattleGroupSaves = JSON.stringify(savedArmies);
     });    
 
     $('#clear-local').button().on('click tap', function(){
