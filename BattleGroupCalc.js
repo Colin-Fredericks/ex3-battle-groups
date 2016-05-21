@@ -27,6 +27,10 @@ $(document).ready(function(){
         'iscustom': false
     };
     
+    // To have a set that's not adjusted for Size/Drill/Might,
+    // so we can store custom armies properly.
+    var baseStats = $.extend(true, {}, stats);
+    
     function getStats(){
         // stats[key] = armies[armyType][key] won't work for nested reference types
         // this is a quick and easy workaround. there are better solutions.
@@ -36,6 +40,7 @@ $(document).ready(function(){
         var drill = stats.drill || 0;
         var might = stats.might || 0;
         stats = JSON.parse(JSON.stringify(armies[armyType]));
+        baseStats = $.extend(true, {}, stats);
         stats.size = size;
         stats.drill = drill;
         stats.might = might;
@@ -45,7 +50,6 @@ $(document).ready(function(){
 
     function setSize(event, ui){
         stats.size = ui.value;
-        console.log('Size: ' + stats.size);
         updateDisplay();
         return;
     }
@@ -73,7 +77,6 @@ $(document).ready(function(){
     
     function setDrill(event, ui){
         stats.drill = ui.value;
-        console.log('Drill: ' + stats.drill);
         updateDisplay();
         return;
     }
@@ -98,7 +101,6 @@ $(document).ready(function(){
     
     function setMight(event, ui){
         stats.might = ui.value;
-        console.log('Might: ' + stats.might);
         updateDisplay();
         return;
     }
@@ -144,7 +146,6 @@ $(document).ready(function(){
                 }else{
                     armies[armyType]['routdiff'] = 1;
                 }
-                console.log(armies[armyType]['routdiff']);
                 updateDisplay();
             });
             
@@ -309,7 +310,11 @@ $(document).ready(function(){
         }
     });
     
-    $('#save-local').button().on('click tap', function(){
+    // Save the current custom army in HTML5 local storage
+    $('#save-local').on('click tap', function(){
+    
+        var savedArmies = {};
+        
         if(typeof Storage === 'undefined') {
             alert('Your browser does not support this option');
             return;
@@ -318,21 +323,20 @@ $(document).ready(function(){
             localStorage.BattleGroupSaves = '';
         }
         if(localStorage.BattleGroupSaves !== ''){
-            var savedArmies = JSON.parse(localStorage.BattleGroupSaves);
-        }else{
-            var savedArmies = {};
+            savedArmies = JSON.parse(localStorage.BattleGroupSaves);
+            for(var key in savedArmies){
+                savedArmies[key] = JSON.parse(savedArmies[key]);
+            }
         }
         
         var armyNumber = Object.keys(savedArmies).length;
         var armyKey = 'army' + armyNumber.toString();
         
-        console.log('saving army to HTML5 local storage');
-        
         // If this is a duplicate, save over the old one.
         for(var key in savedArmies){
             if(savedArmies[key].name == stats.name){
-                savedArmies[key] = JSON.stringify(stats);
-                armies[key] = $.extend(true, {}, stats);
+                savedArmies[key] = JSON.stringify(baseStats);
+                armies[key] = $.extend(true, {}, baseStats);
                 localStorage.BattleGroupSaves = JSON.stringify(savedArmies);
                 armyMenu.select(armyKey);
                 return;
@@ -341,8 +345,8 @@ $(document).ready(function(){
         
         // Otherwise, create a new entry:
         // Clone the current army stats to local storage and to the stats list.
-        savedArmies[armyKey] = JSON.stringify(stats);
-        armies[armyKey] = $.extend(true, {}, stats);
+        savedArmies[armyKey] = JSON.stringify(baseStats);
+        armies[armyKey] = $.extend(true, {}, baseStats);
 
         // Add it to the top of the drop-down menu
         $('<option/>').attr('value', armyKey).text(armies[armyKey].name).appendTo(armyMenu);
@@ -356,14 +360,15 @@ $(document).ready(function(){
     });
     
     // Remove the army from the saved list and the dropdown menu
-    $('#delete-local').button().on('click tap', function(){
+    $('#delete-local').on('click tap', function(){
         $('option[value='+armyType+']').remove();
         var savedArmies = JSON.parse(localStorage.BattleGroupSaves);
         delete savedArmies[armyType];
         localStorage.BattleGroupSaves = JSON.stringify(savedArmies);
     });    
-
-    $('#clear-local').button().on('click tap', function(){
+    
+    // Clear all of the stored armies.
+    $('#clear-local').on('click tap', function(){
         localStorage.BattleGroupSaves = '';
     });
 });
