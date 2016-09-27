@@ -54,6 +54,14 @@ $(document).ready(function(){
         return;
     }
     
+    function getSizeText(){
+        if(stats.size == 1){ return(" (a dozen)"); }
+        if(stats.size == 2){ return(" (dozens)"); }
+        if(stats.size == 3){ return(" (a hundred)"); }
+        if(stats.size == 4){ return(" (hundreds)"); }
+        if(stats.size == 5){ return(" (a thousand)"); }
+    }
+    
     function increaseAttackDamage(atk, dmg) {
         atk = atk || 0;
         dmg = dmg || 0;
@@ -208,7 +216,7 @@ $(document).ready(function(){
         $('#soak').text(stats.soak);
         $('#command').text(stats.command);
         $('#defense').text(stats.defense);
-        $('.showsize').text(stats.size);
+        $('.showsize').text(stats.size + getSizeText());
         $('.showdrill').text(stats.drilltext);
         $('.showmight').text(stats.might);
         $('#senses').text(stats.senses);
