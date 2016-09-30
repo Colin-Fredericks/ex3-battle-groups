@@ -227,7 +227,6 @@ $(document).ready(function(){
         if(stats.routdiff > 50){
             $('#routdiff').text('perfect morale');
             $('#magnitude').text(Number(stats.magnitude) + 3);
-            console.log('magnitude adjusted for perfect morale');
         }else{
             $('#routdiff').text(stats.routdiff);
         }
