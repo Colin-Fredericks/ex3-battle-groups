@@ -147,7 +147,7 @@ $(document).ready(function(){
                 updateDisplay();
             });
             
-            $('.customcheck').change(function(){
+            $('#pm_box').change(function(){
                 
                 if(armies[armyType]['routdiff'] != 100){
                     armies[armyType]['routdiff'] = 100;
@@ -225,6 +225,7 @@ $(document).ready(function(){
 
         if(stats.routdiff > 50){
             $('#routdiff').text('perfect morale');
+            $('#magnitude').text(Number(stats.magnitude) + 3);
         }else{
             $('#routdiff').text(stats.routdiff);
         }
