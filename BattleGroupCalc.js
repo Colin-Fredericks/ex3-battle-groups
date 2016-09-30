@@ -147,6 +147,7 @@ $(document).ready(function(){
                 updateDisplay();
             });
             
+            // When clicking the Perfect Morale box, set it to 100.
             $('#pm_box').change(function(){
                 
                 if(armies[armyType]['routdiff'] != 100){
@@ -226,6 +227,7 @@ $(document).ready(function(){
         if(stats.routdiff > 50){
             $('#routdiff').text('perfect morale');
             $('#magnitude').text(Number(stats.magnitude) + 3);
+            console.log('magnitude adjusted for perfect morale');
         }else{
             $('#routdiff').text(stats.routdiff);
         }
