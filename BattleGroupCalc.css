@@ -148,3 +148,12 @@ table#armystats.clear{
     padding: 4px 20px 4px 8px;
     font-size: 14px;
 }
+
+#colinlinks {
+    padding: 6px;
+}
+
+#colinlinks p {
+    margin: 0px;
+    font-size: small;
+}
