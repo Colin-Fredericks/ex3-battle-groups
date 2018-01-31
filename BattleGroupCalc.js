@@ -150,10 +150,10 @@ $(document).ready(function(){
             // When clicking the Perfect Morale box, set it to 100.
             $('#pm_box').change(function(){
                 
-                if(armies[armyType]['routdiff'] != 100){
-                    armies[armyType]['routdiff'] = 100;
+                if(armies[armyType].routdiff != 100){
+                    armies[armyType].routdiff = 100;
                 }else{
-                    armies[armyType]['routdiff'] = 1;
+                    armies[armyType].routdiff = 1;
                 }
                 updateDisplay();
             });
@@ -166,7 +166,7 @@ $(document).ready(function(){
         for(var key in armies[armyType]){
             $( 'input[name=' + key + ']' ).val( armies[armyType][key] );
         }
-        if(armies[armyType]['routdiff'] < 50){
+        if(armies[armyType].routdiff < 50){
             document.getElementById('pm_box').checked = false;
         }else{
             document.getElementById('pm_box').checked = true;
@@ -207,7 +207,7 @@ $(document).ready(function(){
                 if (line.control) {
                     extraAttacks += ' (' + line.control + ' dice to control)';
                 }
-                extraAttacks += '</td></tr>'
+                extraAttacks += '</td></tr>';
             }
             $('#multipleattacks').html(extraAttacks).show();
         } else {
@@ -273,7 +273,7 @@ $(document).ready(function(){
         if(typeof localStorage.BattleGroupSaves !== 'undefined' && localStorage.BattleGroupSaves !== ''){
             var savedArmies = JSON.parse(localStorage.BattleGroupSaves);
             for(var key in savedArmies){
-                var tempArmy = JSON.parse(savedArmies[key])
+                var tempArmy = JSON.parse(savedArmies[key]);
                 armyMenu.prepend('<option value="' + key +'">' + tempArmy.name + '</option>');
                 armies[key] = $.extend(true, {}, tempArmy);
             }
@@ -334,8 +334,8 @@ $(document).ready(function(){
         }
         if(localStorage.BattleGroupSaves !== ''){
             savedArmies = JSON.parse(localStorage.BattleGroupSaves);
-            for(var key in savedArmies){
-                savedArmies[key] = JSON.parse(savedArmies[key]);
+            for(var k in savedArmies){
+                savedArmies[k] = JSON.parse(savedArmies[k]);
             }
         }
         
