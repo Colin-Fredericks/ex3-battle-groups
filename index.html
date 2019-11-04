@@ -1,70 +1,280 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Ex3 Battle Group Generator</title>
     <script src="jquery-2.2.3.min.js"></script>
-    <link rel="stylesheet" href="jquery-ui.min.css">
+    <link rel="stylesheet" href="jquery-ui.min.css" />
     <script src="jquery-ui.min.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
+    <script src="BattleGroupArmies.js"></script>
     <script src="BattleGroupCalc.js"></script>
-	<link rel="stylesheet" type="text/css" href="BattleGroupCalc.css" />
-</head>
-<body>
+    <link rel="stylesheet" type="text/css" href="BattleGroupCalc.css" />
+  </head>
+  <body>
+    <p class="titletopper dontprint">Exalted 3rd Edition</p>
+    <h1 class="dontprint">Battle Group Generator</h1>
 
-<p class="titletopper">Exalted 3rd Edition</p>
-<h1>Battle Group Generator</h1>
-
-<div class="bigbox">
-
-    <div class="leftbox">
-    
+    <div class="bigbox twowide">
+      <div class="leftbox dontprint">
         <h2 class="trooptype">Troop Type:</h2>
         <select id="armytype">
-            <option value="conscript">Conscripts</option>
-            <option value="soldier" selected>Battle-Ready Troops</option>
-            <option value="nomad">Nomadic Horse-Archers</option>
-            <option value="reaver">Lintha Reavers</option>
-            <option value="elite">Elite Troops</option>
-            <option value="bride">Brides of Ahlat</option>
-            <option value="automaton">Automata</option>
-            <option value="zombie">Zombies</option>
-            <option value="warghost">War Ghosts</option>
-            <option value="bonesider">Bonesiders</option>
-            <option value="bloodape">Blood Apes</option>
-            <option value="cataphract">Fair Folk Cataphracts</option>
-            <option value="hobgoblin">Fair Folk Hobgoblins</option>
-            <option value="silverwight">Silverwights</option>
-            <option value="buckogre">Buck-Ogres</option>
+          <option value="custom">Custom</option>
+          <option value="conscript">Conscripts</option>
+          <option value="soldier" selected>Battle-Ready Troops</option>
+          <option value="nomad">Nomadic Horse-Archers</option>
+          <option value="reaver">Lintha Reavers</option>
+          <option value="elite">Elite Troops</option>
+          <option value="bride">Brides of Ahlat</option>
+          <option value="automaton">Automata</option>
+          <option value="zombie">Zombies</option>
+          <option value="warghost">War Ghosts</option>
+          <option value="bonesider">Bonesiders</option>
+          <option value="greenmaw">Greenmaws</option>
+          <option value="bloodape">Blood Apes</option>
+          <option value="cataphract">Fair Folk Cataphracts</option>
+          <option value="hobgoblin">Fair Folk Hobgoblins</option>
+          <option value="silverwight">Silverwights</option>
+          <option value="buckogre">Buck-Ogres</option>
         </select>
-        
-        <br clear="all">
+
+        <br clear="all" />
 
         <div class="selectorbox">
-            <div class="allsliders">
-                <div id="sizeslider" class="slider"></div>
-                <p>Size: <span id="showsize"></span></p>
-                <div id="drillslider" class="slider"></div>
-                <p>Drill: <span id="showdrill"></span></p>
-                <div id="mightslider" class="slider"></div>
-                <p>Might: <span id="showmight"></span></p>
-            </div>
+          <div class="allsliders">
+            <div id="sizeslider" class="slider"></div>
+            <p>Size: <span class="showsize"></span></p>
+            <div id="drillslider" class="slider"></div>
+            <p>Drill: <span class="showdrill"></span></p>
+            <div id="mightslider" class="slider"></div>
+            <p>Might: <span class="showmight"></span></p>
+          </div>
         </div>
 
+        <div class="hidden custombox">
+          <form>
+            <div id="customstats" class="twowide">
+              <div class="col1">
+                <h3><label for="army_box">Army Name</label></h3>
+              </div>
+              <div>
+                <input
+                  id="army_box"
+                  type="text"
+                  name="name"
+                  class="customtext"
+                />
+                <br />
+              </div>
+
+              <div class="col1"><label for="jb_box">Join Battle</label></div>
+              <div>
+                <input
+                  id="jb_box"
+                  type="text"
+                  name="joinbattle"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="atk_box">Attack</label></div>
+              <div>
+                <input
+                  id="atk_box"
+                  type="text"
+                  name="attack"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="def_box">Defense</label></div>
+              <div>
+                <input
+                  id="def_box"
+                  type="text"
+                  name="defense"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="dmg_box">Damage</label></div>
+              <div>
+                <input
+                  id="dmg_box"
+                  type="text"
+                  name="damage"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="ht_box">Health</label></div>
+              <div>
+                <input
+                  id="ht_box"
+                  type="text"
+                  name="magnitude"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="sk_box">Soak</label></div>
+              <div>
+                <input
+                  id="sk_box"
+                  type="text"
+                  name="soak"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="sense_box">Senses</label></div>
+              <div>
+                <input
+                  id="sense_box"
+                  type="text"
+                  name="senses"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="res_box">Resolve</label></div>
+              <div>
+                <input
+                  id="res_box"
+                  type="text"
+                  name="resolve"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="resist_box">Resist</label></div>
+              <div>
+                <input
+                  id="resist_box"
+                  type="text"
+                  name="resist"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1">
+                <label for="pm_box">Perfect Morale?</label>
+              </div>
+              <div>
+                <input
+                  id="pm_box"
+                  type="checkbox"
+                  name="perfectmorale"
+                  value="perfect"
+                  class="customcheck"
+                />
+              </div>
+
+              <div class="fullwidth" style="text-align: center;">
+                <button id="save-local" class="no-print">
+                  Save Local Copy
+                </button>
+                <br />
+                <button id="delete-local" class="no-print">
+                  Delete Local Copy
+                </button>
+                <br />
+                <button id="clear-local" class="no-print">
+                  Clear Custom Armies
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="armystats" class="twowide">
+        <div class="fullwidth" id="tabletitle">
+          <h3 id="armyname">Javascript is off</h3>
+        </div>
+        <div class="printonly fullwidth twowide">
+          <div>Size:</div>
+          <div class="showsize"></div>
+        </div>
+        <div class="printonly fullwidth twowide">
+          <div>Drill:</div>
+          <div class="showdrill"></div>
+        </div>
+        <div class="printonly fullwidth twowide">
+          <div class="divider">Might:</div>
+          <div class="showmight divider"></div>
+        </div>
+
+        <div class="col1">Join Battle:</div>
+        <div id="joinbattle"></div>
+
+        <div class="fullwidth twowide" id="singleattack">
+          <div class="col1">Attack:</div>
+          <div><span id="attack"></span> <span id="attacktype"></span></div>
+          <div class="col1">Damage:</div>
+          <div id="damage"></div>
+        </div>
+        <div class="fullwidth twowide" id="multipleattacks"></div>
+
+        <div class="col1">Defense:</div>
+        <div id="defense"></div>
+
+        <div class="col1">Magnitude:</div>
+        <div id="magnitude"></div>
+
+        <div class="col1">Soak:</div>
+        <div id="soak"></div>
+
+        <div class="col1">Senses:</div>
+        <div id="senses"></div>
+
+        <div class="col1">Resolve:</div>
+        <div id="resolve"></div>
+
+        <div class="col1">Resist:</div>
+        <div id="resist"></div>
+
+        <div class="col1">Command Bonus:</div>
+        <div id="command"></div>
+
+        <div class="col1">Rout Difficulty:</div>
+        <div id="routdiff"></div>
+      </div>
+
+      <button id="get-printable" class="no-print">Get Printable Version</button>
     </div>
 
-    <table id="armystats">
-        <tr><th colspan="2" id="tabletitle"><h3 id="armyname">Javascript is off</h3></th></tr>
-        <tr><th>Join Battle:</th><td id="joinbattle"></td></tr>
-        <tr><th>Attack:</th><td><span id="attack"></span> <span id="attacktype"></span></td></tr>
-        <tr><th>Defense:</th><td id="defense"></td></tr>
-        <tr><th>Damage:</th><td id="damage"></td></tr>
-        <tr><th>Magnitude:</th><td id="magnitude"></td></tr>
-        <tr><th>Soak:</th><td id="soak"></td></tr>
-        <tr><th>Command Bonus:</th><td id="command"></td></tr>
-        <tr><th>Rout Difficulty:</th><td id="routdiff"></td></tr>
-    </table>
+    <br clear="all" />
 
-</div>
+    <hr class="dontprint" style="margin-top: 3em;" />
 
-</body>
+    <div id="colinlinks" class="dontprint">
+      <p class="titletopper">Colin's Ex3 Interactives:</p>
+      <p>
+        <a href="https://colin-fredericks.github.io/ex3-dice-roller/"
+          >Dice Roller</a
+        >
+      </p>
+      <p>
+        <a href="https://colin-fredericks.github.io/ex3-battle-groups/"
+          >Battle Group Generator</a
+        >
+      </p>
+      <p>
+        <a href="https://colin-fredericks.github.io/ex3-dice-tricks/"
+          >Dice Trick Comparison</a
+        >
+      </p>
+      <p>
+        <a href="https://colin-fredericks.github.io/ex3-400-lunars/"
+          >400 Lunars</a
+        >
+      </p>
+      <p>
+        <a href="https://strangercreations.wordpress.com"
+          >Stranger Creations - NPCs and settings</a
+        >
+      </p>
+    </div>
+  </body>
 </html>
