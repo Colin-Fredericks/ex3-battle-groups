@@ -30,6 +30,7 @@ p {
   border: 2px solid #b80;
   padding: 0px 4px 8px 4px;
   background-color: rgb(250, 240, 190);
+  align-self: start;
 }
 
 #armystats > div {
@@ -42,6 +43,7 @@ p {
 
 #customstats {
   background-color: #ec6;
+  padding: 4px;
 }
 
 #armystats.clear {
@@ -74,6 +76,10 @@ p {
 
 #multipleattacks > div {
   white-space: normal;
+}
+
+#custombox {
+  padding: 4px;
 }
 
 .twowide {
@@ -114,6 +120,24 @@ p {
 @media only screen and (max-width: 900px) {
   .bigbox {
     grid-template-columns: 1fr;
+    width: 100%;
+  }
+  #customstats {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+  }
+  #customstats > div {
+    padding-left: 4px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #customstats {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  #customstats > div {
+    padding-left: 4px;
     width: 100%;
   }
 }

@@ -50,6 +50,142 @@
             <p>Might: <span class="showmight"></span></p>
           </div>
         </div>
+
+        <div class="hidden custombox">
+          <form>
+            <div id="customstats" class="twowide">
+              <div class="col1">
+                <h3><label for="army_box">Army Name</label></h3>
+              </div>
+              <div>
+                <input
+                  id="army_box"
+                  type="text"
+                  name="name"
+                  class="customtext"
+                />
+                <br />
+              </div>
+
+              <div class="col1"><label for="jb_box">Join Battle</label></div>
+              <div>
+                <input
+                  id="jb_box"
+                  type="text"
+                  name="joinbattle"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="atk_box">Attack</label></div>
+              <div>
+                <input
+                  id="atk_box"
+                  type="text"
+                  name="attack"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="def_box">Defense</label></div>
+              <div>
+                <input
+                  id="def_box"
+                  type="text"
+                  name="defense"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="dmg_box">Damage</label></div>
+              <div>
+                <input
+                  id="dmg_box"
+                  type="text"
+                  name="damage"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="ht_box">Health</label></div>
+              <div>
+                <input
+                  id="ht_box"
+                  type="text"
+                  name="magnitude"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="sk_box">Soak</label></div>
+              <div>
+                <input
+                  id="sk_box"
+                  type="text"
+                  name="soak"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="sense_box">Senses</label></div>
+              <div>
+                <input
+                  id="sense_box"
+                  type="text"
+                  name="senses"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="res_box">Resolve</label></div>
+              <div>
+                <input
+                  id="res_box"
+                  type="text"
+                  name="resolve"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1"><label for="resist_box">Resist</label></div>
+              <div>
+                <input
+                  id="resist_box"
+                  type="text"
+                  name="resist"
+                  class="customtext numeric"
+                />
+              </div>
+
+              <div class="col1">
+                <label for="pm_box">Perfect Morale?</label>
+              </div>
+              <div>
+                <input
+                  id="pm_box"
+                  type="checkbox"
+                  name="perfectmorale"
+                  value="perfect"
+                  class="customcheck"
+                />
+              </div>
+
+              <div class="fullwidth" style="text-align: center;">
+                <button id="save-local" class="no-print">
+                  Save Local Copy
+                </button>
+                <br />
+                <button id="delete-local" class="no-print">
+                  Delete Local Copy
+                </button>
+                <br />
+                <button id="clear-local" class="no-print">
+                  Clear Custom Armies
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
 
       <div id="armystats" class="twowide">
@@ -72,10 +208,10 @@
         <div class="col1">Join Battle:</div>
         <div id="joinbattle"></div>
 
-        <div class="fullwidth" id="singleattack">
-          <div>Attack:</div>
+        <div class="fullwidth twowide" id="singleattack">
+          <div class="col1">Attack:</div>
           <div><span id="attack"></span> <span id="attacktype"></span></div>
-          <div>Damage:</div>
+          <div class="col1">Damage:</div>
           <div id="damage"></div>
         </div>
         <div class="fullwidth twowide" id="multipleattacks"></div>
@@ -109,133 +245,6 @@
     </div>
 
     <br clear="all" />
-
-    <div class="hidden custombox">
-      <form>
-        <div id="customstats" class="twowide">
-          <div>
-            <h3><label for="army_box">Army Name</label></h3>
-          </div>
-          <div>
-            <input id="army_box" type="text" name="name" class="customtext" />
-            <br />
-          </div>
-
-          <div><label for="jb_box">Join Battle</label></div>
-          <div>
-            <input
-              id="jb_box"
-              type="text"
-              name="joinbattle"
-              class="customtext numeric"
-            />
-          </div>
-
-          <div><label for="atk_box">Attack</label></div>
-          <div>
-            <input
-              id="atk_box"
-              type="text"
-              name="attack"
-              class="customtext numeric"
-            />
-          </div>
-
-          <div><label for="def_box">Defense</label></div>
-          <div>
-            <input
-              id="def_box"
-              type="text"
-              name="defense"
-              class="customtext numeric"
-            />
-          </div>
-
-          <div><label for="dmg_box">Damage</label></div>
-          <div>
-            <input
-              id="dmg_box"
-              type="text"
-              name="damage"
-              class="customtext numeric"
-            />
-          </div>
-
-          <div><label for="ht_box">Health</label></div>
-          <div>
-            <input
-              id="ht_box"
-              type="text"
-              name="magnitude"
-              class="customtext numeric"
-            />
-          </div>
-
-          <div><label for="sk_box">Soak</label></div>
-          <div>
-            <input
-              id="sk_box"
-              type="text"
-              name="soak"
-              class="customtext numeric"
-            />
-          </div>
-
-          <div><label for="sense_box">Senses</label></div>
-          <div>
-            <input
-              id="sense_box"
-              type="text"
-              name="senses"
-              class="customtext numeric"
-            />
-          </div>
-
-          <div><label for="res_box">Resolve</label></div>
-          <div>
-            <input
-              id="res_box"
-              type="text"
-              name="resolve"
-              class="customtext numeric"
-            />
-          </div>
-
-          <div><label for="resist_box">Resist</label></div>
-          <div>
-            <input
-              id="resist_box"
-              type="text"
-              name="resist"
-              class="customtext numeric"
-            />
-          </div>
-
-          <div><label for="pm_box">Perfect Morale?</label></div>
-          <div>
-            <input
-              id="pm_box"
-              type="checkbox"
-              name="perfectmorale"
-              value="perfect"
-              class="customcheck"
-            />
-          </div>
-
-          <div class="fullwidth" style="text-align: center;">
-            <button id="save-local" class="no-print">Save Local Copy</button>
-            <br />
-            <button id="delete-local" class="no-print">
-              Delete Local Copy
-            </button>
-            <br />
-            <button id="clear-local" class="no-print">
-              Clear Custom Armies
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
 
     <hr class="dontprint" style="margin-top: 3em;" />
 
