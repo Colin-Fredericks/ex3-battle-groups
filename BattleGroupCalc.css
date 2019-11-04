@@ -1,159 +1,196 @@
-@media print
-{    
-    .no-print, .no-print *
-    {
-        display: none !important;
-    }
+@media print {
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
 }
 
 body {
-    font-family: Verdana, sans-serif;
+  font-family: Verdana, sans-serif;
 }
 
 h1 {
-    color: #b80;
-    font-variant: small-caps;
-    margin: 0px 0px 8px 0px;
+  color: #b80;
+  font-variant: small-caps;
+  margin: 0px 0px 8px 0px;
 }
 
-h2, h3 {
-    font-variant: small-caps;
-    margin: 4px 0px 4px 0px;
-    display: inline-block;
+h2,
+h3 {
+  font-variant: small-caps;
+  margin: 4px 0px 4px 0px;
+  display: inline-block;
 }
 
 p {
-    margin: 4px;
-}
-
-table {
-    border: 2px solid #b80;
-    padding: 0px 4px 8px 4px;
-    background-color: rgb(250, 240, 190);
-}
-
-th {
-    text-align: right;
-    padding-left: 4px;
-}
-
-td {
-    padding-right: 4px;
+  margin: 4px;
 }
 
 #armystats {
-    display: inline-block;
+  border: 2px solid #b80;
+  padding: 0px 4px 8px 4px;
+  background-color: rgb(250, 240, 190);
+}
+
+#armystats > div {
+  padding: 2px 4px 2px 4px;
+}
+
+#armystats > div > div {
+  padding: 2px 4px 2px 4px;
 }
 
 #customstats {
-    display: inline-block;
-    background-color: #ec6;
+  background-color: #ec6;
 }
 
-table#armystats.clear{
-    border: none;
-    background-color: white;
+#armystats.clear {
+  border: none;
+  background-color: white;
+  width: 100%;
 }
 
 #get-printable {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    margin-bottom: -36px;
-    font-size: 10pt;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  margin-bottom: -36px;
+  font-size: 10pt;
 }
 
-#save-local, #delete-local, #clear-local {
-    font-size: 10pt;
+#save-local,
+#delete-local,
+#clear-local {
+  font-size: 10pt;
 }
 
 #tabletitle {
-    text-align: center;
+  text-align: center;
+}
+
+#multipleattacks {
+  width: 100%;
+}
+
+#multipleattacks > div {
+  white-space: normal;
+}
+
+.twowide {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .slider {
-    width: 300px;
-    display: block;
-    margin-top: 4px;
+  width: 100%;
+  display: block;
+  margin-top: 4px;
 }
 
-.labels, .allsliders{
-    display: inline-block;
+.labels,
+.allsliders {
+  display: inline-block;
+  width: 100%;
 }
 
 .allsliders p {
-    padding-top: 0px;
-    margin-top: 2px;
-    padding-bottom: 8px;
-    font-size: 14px;
-    font-weight: bold;
+  padding-top: 0px;
+  margin-top: 2px;
+  padding-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .bigbox {
-    border: 2px solid #b80;
-    background-color: #da3;
-    float:left;
-    white-space: nowrap;
-    padding: 3px;
-    position: relative;
+  border: 2px solid #b80;
+  background-color: #da3;
+  float: left;
+  white-space: nowrap;
+  padding: 3px;
+  position: relative;
+  grid-template-columns: 2fr 3fr;
 }
 
-.bigbox.clear{
-    border: none;
-    background-color: white;
-    float:none;
+@media only screen and (max-width: 900px) {
+  .bigbox {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
+
+.bigbox.clear {
+  border: none;
+  background-color: white;
+  float: none;
+  grid-template-columns: 1fr;
+}
+
+.selectorbox {
+  width: 100%;
+}
+
+.fullwidth {
+  grid-column: 1 / span 2;
 }
 
 .divider {
-    border-bottom: 2px dotted black;
+  border-bottom: 2px dotted black;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .dontprint {
-    
 }
 
 .printonly {
-    display: none;
+  display: none;
 }
 
 .leftbox {
-    display: inline-block;
-    margin: 0px 16px 0px 0px;
-    padding: 0px 0px 0px 8px;
-    vertical-align: top;
+  display: inline-block;
+  margin: 0px 16px 0px 0px;
+  padding: 0px 0px 0px 8px;
+  vertical-align: top;
 }
 
 .titletopper {
-    margin: 0px;
-    padding: 0px;
-    color: #b80;
-    font-variant: small-caps;    
-    font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+  color: #b80;
+  font-variant: small-caps;
+  font-weight: bold;
 }
 
 .trooptype {
-    float: left;
+  float: left;
 }
 
 .ui-selectmenu-button {
-    float:left;
-    margin: 4px 0px 0px 4px;
+  float: left;
+  margin: 4px 0px 0px 4px;
 }
 
 .ui-selectmenu-text {
-    padding: 4px 20px 4px 8px;
-    font-size: 14px;
+  padding: 4px 20px 4px 8px;
+  font-size: 14px;
+}
+
+.col1 {
+  text-align: right;
+  font-weight: bold;
+}
+
+.pindown {
+  align-self: end;
 }
 
 #colinlinks {
-    padding: 6px;
+  padding: 6px;
 }
 
 #colinlinks p {
-    margin: 0px;
-    font-size: small;
+  margin: 0px;
+  font-size: small;
 }
