@@ -390,22 +390,21 @@ var armies = {
         'resolve': 4,
         'iscustom': false
     },
-    '': {
-        'name': '',
-        'joinbattle': ,
+    'anhule': {
+        'name': 'Anhule',
+        'joinbattle': 7,
         'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+            { 'type': 'Bite', 'dice': 10, 'damage': 13 },
+            { 'type': 'Web Grapple', 'dice': 10, 'damage': 10 }
         ],
-        'magnitude': ,
-        'soak': ,
+        'magnitude': 15,
+        'soak': 8,
         'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
+        'routdiff': 1,
+        'defense': 4,
+        'resist': 0,
+        'senses': 10,
+        'resolve': 3,
         'iscustom': false
     },
     '': {
