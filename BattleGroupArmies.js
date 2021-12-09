@@ -353,27 +353,25 @@ var armies = {
         'command': 8,
         'routdiff': 100,
         'defense': 4,
-        'resist': 0,
+        'resist': 100,
         'senses': 0,
         'resolve': 5,
         'iscustom': false
     },
-    '': {
-        'name': '',
-        'joinbattle': ,
+    'walkuren': {
+        'name': 'Walkuren',
+        'joinbattle': 9,
         'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+            { 'type': 'Longspear', 'dice': 9, 'damage': 14 }
         ],
-        'magnitude': ,
-        'soak': ,
+        'magnitude': 9,
+        'soak': 9,
         'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
+        'routdiff': 1,
+        'defense': 3,
+        'resist': 100,
+        'senses': 8,
+        'resolve': 4,
         'iscustom': false
     },
     '': {
