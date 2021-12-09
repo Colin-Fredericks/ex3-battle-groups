@@ -443,24 +443,6 @@ var armies = {
         'resolve': 3,
         'iscustom': false
     },
-    '': {
-        'name': '',
-        'joinbattle': ,
-        'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
-        ],
-        'magnitude': ,
-        'soak': ,
-        'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
-        'iscustom': false
-    },
     'grelidaka': {
         'name': 'Grelidaka',
         'joinbattle': 8,
