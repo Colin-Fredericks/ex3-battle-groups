@@ -305,22 +305,21 @@ var armies = {
         'resolve': 1,
         'iscustom': false
     },
-    '': {
-        'name': '',
-        'joinbattle': ,
+    'drowned': {
+        'name': 'Drowned',
+        'joinbattle': 4,
         'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+            { 'type': 'Grapple', 'dice': 6, 'damage': 9 },
+            { 'type': 'Knife', 'dice': 8, 'damage': 10 }
         ],
-        'magnitude': ,
-        'soak': ,
+        'magnitude': 11,
+        'soak': 3,
         'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
+        'routdiff': 1,
+        'defense': 3,
+        'resist': 100,
+        'senses': 0,
+        'resolve': 3,
         'iscustom': false
     },
     '': {
