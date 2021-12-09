@@ -478,22 +478,20 @@ var armies = {
         'resolve': 4,
         'iscustom': false
     },
-    '': {
-        'name': '',
-        'joinbattle': ,
+    'lavamoth': {
+        'name': 'Lava Moths',
+        'joinbattle': 6,
         'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+            { 'type': 'Wing buffet', 'dice': 9, 'damage': 9 }
         ],
-        'magnitude': ,
-        'soak': ,
+        'magnitude': 9,
+        'soak': 6,
         'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
+        'routdiff': 1,
+        'defense': 5,
+        'resist': 0,
+        'senses': 5,
+        'resolve': 2,
         'iscustom': false
     },
     '': {
