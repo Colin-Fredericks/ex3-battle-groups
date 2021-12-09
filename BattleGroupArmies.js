@@ -494,22 +494,20 @@ var armies = {
         'resolve': 2,
         'iscustom': false
     },
-    '': {
-        'name': '',
-        'joinbattle': ,
+    'parasiteshadow': {
+        'name': 'Parasitic shadows',
+        'joinbattle': 6,
         'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+            { 'type': 'Strangle', 'dice': 5, 'damage': 2 }
         ],
-        'magnitude': ,
-        'soak': ,
+        'magnitude': 4,
+        'soak': 1,
         'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
+        'routdiff': 1,
+        'defense': 5,
+        'resist': 0,
+        'senses': 6,
+        'resolve': 1,
         'iscustom': false
     },
     '': {
