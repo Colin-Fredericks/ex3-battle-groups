@@ -122,10 +122,12 @@ p {
     grid-template-columns: 1fr;
     width: 100%;
   }
+
   #customstats {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     width: 100%;
   }
+
   #customstats > div {
     padding-left: 4px;
   }
@@ -136,6 +138,7 @@ p {
     grid-template-columns: 1fr 1fr;
     width: 100%;
   }
+
   #customstats > div {
     padding-left: 4px;
     width: 100%;
