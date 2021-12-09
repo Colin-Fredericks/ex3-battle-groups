@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var armyType = 'soldier';
   var armyMenu = $('#armytype');
   var hasFormHandlers = false;
@@ -23,7 +23,7 @@ $(document).ready(function() {
     drill: 2,
     drilltext: 'Average',
     might: 0,
-    iscustom: false
+    iscustom: false,
   };
 
   // To have a set that's not adjusted for Size/Drill/Might,
@@ -140,7 +140,7 @@ $(document).ready(function() {
   function getCustomStats() {
     if (!hasFormHandlers) {
       // add form handlers to update the custom stats on form changes.
-      $('.customtext').on('change keyup paste', function() {
+      $('.customtext').on('change keyup paste', function () {
         var temp = $(this).attr('name');
         var tempval = $(this).val();
         var numeric = $(this).hasClass('numeric');
@@ -153,7 +153,7 @@ $(document).ready(function() {
       });
 
       // When clicking the Perfect Morale box, set it to 100.
-      $('#pm_box').change(function() {
+      $('#pm_box').change(function () {
         if (armies[armyType].routdiff != 100) {
           armies[armyType].routdiff = 100;
         } else {
@@ -214,9 +214,7 @@ $(document).ready(function() {
         }
         extraAttacks += '</div></div>';
       }
-      $('#multipleattacks')
-        .html(extraAttacks)
-        .show();
+      $('#multipleattacks').html(extraAttacks).show();
     } else {
       $('#multipleattacks').hide();
     }
@@ -253,7 +251,7 @@ $(document).ready(function() {
     max: 5,
     value: 1,
     slide: setSize,
-    change: setSize
+    change: setSize,
   });
 
   $('#drillslider').slider({
@@ -262,7 +260,7 @@ $(document).ready(function() {
     max: 3,
     value: 2,
     slide: setDrill,
-    change: setDrill
+    change: setDrill,
   });
 
   $('#mightslider').slider({
@@ -271,7 +269,7 @@ $(document).ready(function() {
     max: 3,
     value: 0,
     slide: setMight,
-    change: setMight
+    change: setMight,
   });
 
   // Add any custom armies stored locally to the drop-down menu and to the armies list.
@@ -293,7 +291,7 @@ $(document).ready(function() {
 
   // Make the select menu all JQuery UI fancy.
   armyMenu.selectmenu({
-    select: function(event, ui) {
+    select: function (event, ui) {
       armyType = this.value;
       if (armies[armyType].iscustom) {
         canSeeCustom = true;
@@ -304,7 +302,7 @@ $(document).ready(function() {
         $('.custombox').hide();
       }
       updateDisplay();
-    }
+    },
   });
 
   // Set up the menu so it's on the same option every time the page opens.
@@ -314,7 +312,7 @@ $(document).ready(function() {
   // Handle the switch between regular look and printer-friendly
   $('#get-printable')
     .button()
-    .on('click tap', function() {
+    .on('click tap', function () {
       isPrintable = !isPrintable;
       if (isPrintable) {
         $('.dontprint').hide();
@@ -338,7 +336,7 @@ $(document).ready(function() {
     });
 
   // Save the current custom army in HTML5 local storage
-  $('#save-local').on('click tap', function() {
+  $('#save-local').on('click tap', function () {
     var savedArmies = {};
 
     if (typeof Storage === 'undefined') {
@@ -388,7 +386,7 @@ $(document).ready(function() {
   });
 
   // Remove the army from the saved list and the dropdown menu
-  $('#delete-local').on('click tap', function() {
+  $('#delete-local').on('click tap', function () {
     $('option[value=' + armyType + ']').remove();
     var savedArmies = JSON.parse(localStorage.BattleGroupSaves);
     delete savedArmies[armyType];
@@ -396,7 +394,7 @@ $(document).ready(function() {
   });
 
   // Clear all of the stored armies.
-  $('#clear-local').on('click tap', function() {
+  $('#clear-local').on('click tap', function () {
     localStorage.BattleGroupSaves = '';
   });
 });
