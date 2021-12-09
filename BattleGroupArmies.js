@@ -510,59 +510,21 @@ var armies = {
         'resolve': 1,
         'iscustom': false
     },
-    '': {
-        'name': '',
-        'joinbattle': ,
+    'singers': {
+        'name': 'Singers of the Deep',
+        'joinbattle': 4,
         'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+            { 'type': 'Talons', 'dice': 9, 'damage': 12 },
+            { 'type': 'Grapple', 'dice': 9, 'damage': 9 }
         ],
-        'magnitude': ,
-        'soak': ,
+        'magnitude': 9,
+        'soak': 5,
         'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
-        'iscustom': false
-    },
-    '': {
-        'name': '',
-        'joinbattle': ,
-        'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
-        ],
-        'magnitude': ,
-        'soak': ,
-        'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
-        'iscustom': false
-    },
-    '': {
-        'name': '',
-        'joinbattle': ,
-        'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
-        ],
-        'magnitude': ,
-        'soak': ,
-        'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
+        'routdiff': 1,
+        'defense': 4,
+        'resist': 6,
+        'senses': 5,
+        'resolve': 3,
         'iscustom': false
     }
-
 };
