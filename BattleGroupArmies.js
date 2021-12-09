@@ -461,7 +461,7 @@ var armies = {
     iscustom: false,
   },
   parasiteshadow: {
-    name: 'Parasitic shadows',
+    name: 'Parasitic Shadows',
     joinbattle: 6,
     attacks: [{ type: 'Strangle', dice: 5, damage: 2 }],
     magnitude: 4,
