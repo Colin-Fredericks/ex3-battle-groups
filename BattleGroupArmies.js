@@ -322,40 +322,40 @@ var armies = {
         'resolve': 3,
         'iscustom': false
     },
-    '': {
-        'name': '',
-        'joinbattle': ,
+    'haunt': {
+        'name': 'Haunts',
+        'joinbattle': 4,
         'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+            { 'type': 'Short sword', 'dice': 6, 'damage': 12 },
+            { 'type': 'Shield bash', 'dice': 5, 'damage': 12 }
         ],
-        'magnitude': ,
-        'soak': ,
+        'magnitude': 7,
+        'soak': 8,
         'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
+        'routdiff': 100,
+        'defense': 3,
+        'resist': 100,
+        'senses': 4,
+        'resolve': 5,
         'iscustom': false
     },
-    '': {
-        'name': '',
-        'joinbattle': ,
+    'keregost': {
+        'name': "Keregost's Hundred Handed Army",
+        'joinbattle': 11,
         'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+            { 'type': 'Grand Daiklaive', 'dice': 9, 'damage': 19 },
+            { 'type': 'Longbow', 'dice': 8, 'damage': 14 },
+            { 'type': 'Grapple', 'dice': 9, 'damage': 12 },
+            { 'type': 'Hook Sword', 'dice': 9, 'damage': 14 }
         ],
-        'magnitude': ,
-        'soak': ,
-        'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
+        'magnitude': 29,
+        'soak': 16,
+        'command': 8,
+        'routdiff': 100,
+        'defense': 4,
+        'resist': 0,
+        'senses': 0,
+        'resolve': 5,
         'iscustom': false
     },
     '': {
