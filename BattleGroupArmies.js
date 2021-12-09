@@ -287,6 +287,293 @@ var armies = {
         'senses': 8,
         'resolve': 4,
         'iscustom': false
+    },
+    'crystalmoth': {
+        'name': 'Crystalmoths',
+        'joinbattle': 5,
+        'attacks': [
+            { 'type': 'Bite', 'dice': 9, 'damage': 9 },
+            { 'type': 'Slice', 'dice': 10, 'damage': 13 }
+        ],
+        'magnitude': 8,
+        'soak': 2,
+        'command': 0,
+        'routdiff': 1,
+        'defense': 4,
+        'resist': 0,
+        'senses': 7,
+        'resolve': 1,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
+    },
+    '': {
+        'name': '',
+        'joinbattle': ,
+        'attacks': [
+            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
+            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
+            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+        ],
+        'magnitude': ,
+        'soak': ,
+        'command': 0,
+        'routdiff': ,
+        'defense': ,
+        'resist': ,
+        'senses': ,
+        'resolve': ,
+        'iscustom': false
     }
-}
 
+};
