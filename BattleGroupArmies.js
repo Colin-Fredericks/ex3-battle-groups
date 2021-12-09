@@ -407,22 +407,21 @@ var armies = {
         'resolve': 3,
         'iscustom': false
     },
-    '': {
-        'name': '',
-        'joinbattle': ,
+    'metody': {
+        'name': 'Metody',
+        'joinbattle': 5,
         'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+            { 'type': 'Strike', 'dice': 7, 'damage': 10 },
+            { 'type': 'Grapple', 'dice': 7, 'damage': 6 }
         ],
-        'magnitude': ,
-        'soak': ,
+        'magnitude': 10,
+        'soak': 8,
         'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
+        'routdiff': 1,
+        'defense': 4,
+        'resist': 8,
+        'senses': 5,
+        'resolve': 4,
         'iscustom': false
     },
     '': {
