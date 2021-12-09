@@ -340,7 +340,7 @@ var armies = {
     ],
     magnitude: 29,
     soak: 16,
-    command: 8,
+    command: 0,
     routdiff: 100,
     defense: 4,
     resist: 100,
