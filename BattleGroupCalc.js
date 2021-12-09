@@ -26,6 +26,19 @@ $(document).ready(function () {
     iscustom: false,
   };
 
+  // Sort the army list alphabetically.
+  let armyArray = Object.keys(armies).sort((x, y) => armies[x].name.localeCompare(armies[y].name));
+  console.log(armyArray);
+
+  // Build the troop type list.
+  for (let i = 0; i < armyArray.length; i++) {
+    let troopType = armyArray[i];
+    console.log(name);
+    armyMenu.append(
+      '<option value="' + troopType + '">' + armies[troopType].name + '</option>'
+    );
+  }
+
   // To have a set that's not adjusted for Size/Drill/Might,
   // so we can store custom armies properly.
   var baseStats = $.extend(true, {}, stats);
