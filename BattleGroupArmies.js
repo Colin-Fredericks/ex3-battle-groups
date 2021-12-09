@@ -374,22 +374,20 @@ var armies = {
         'resolve': 4,
         'iscustom': false
     },
-    '': {
-        'name': '',
-        'joinbattle': ,
+    'griefbees': {
+        'name': 'Griefbees',
+        'joinbattle': 5,
         'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+            { 'type': 'Sting', 'dice': 4, 'damage': 4 }
         ],
-        'magnitude': ,
-        'soak': ,
+        'magnitude': 7,
+        'soak': 4,
         'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
+        'routdiff': 1,
+        'defense': 4,
+        'resist': 100,
+        'senses': 6,
+        'resolve': 4,
         'iscustom': false
     },
     '': {
