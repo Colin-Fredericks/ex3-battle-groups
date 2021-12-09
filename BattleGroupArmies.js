@@ -424,22 +424,23 @@ var armies = {
         'resolve': 4,
         'iscustom': false
     },
-    '': {
-        'name': '',
-        'joinbattle': ,
+    'tomescu': {
+        'name': 'Tomescu',
+        'joinbattle': 7,
         'attacks': [
-            { 'type': 'Axe', 'dice': 7, 'damage': 18 },
-            { 'type': 'Antlers', 'dice': 8, 'damage': 16 },
-            { 'type': 'Shield', 'dice': 8, 'damage': 16 }
+            { 'type': 'Sword', 'dice': 10, 'damage': 10 },
+            { 'type': 'Axe', 'dice': 10, 'damage': 12 },
+            { 'type': 'Sledge', 'dice': 10, 'damage': 14 },
+            { 'type': 'Bow', 'dice': 10, 'damage': 10 }
         ],
-        'magnitude': ,
-        'soak': ,
+        'magnitude': 9,
+        'soak': 8,
         'command': 0,
-        'routdiff': ,
-        'defense': ,
-        'resist': ,
-        'senses': ,
-        'resolve': ,
+        'routdiff': 1,
+        'defense': 5,
+        'resist': 0,
+        'senses': 7,
+        'resolve': 3,
         'iscustom': false
     },
     '': {
